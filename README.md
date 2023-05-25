@@ -2,7 +2,7 @@
 
 ...
 
-#### Project Ides
+#### Project Ideas
 
 1. User can request an artist
 
