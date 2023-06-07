@@ -5,13 +5,61 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+    <main class="py-4">
+    @auth
+        <div class="container">
+
+        @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session()->get('error') }}
+            </div>
+
+        @endif
+
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <ul class="list-group mb-5">
+                        @if (auth()->user()->isAdmin())
+                        <li class="list-group-item">
+                            <a href=" {{route('users.index')}}">Users</a>
+                        </li>
+                        @endif
+                        <li class="list-group-item">
+                            <a href=" {{route('posts.index')}}">Posts</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('categories.index')}}">Categories</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('tags.index')}}">Tags</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('events.index')}}">Events</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('albums.index')}}">Album</a>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group mb-5">
+                        <li class="list-group-item">
+                            <a href=" {{route('trashed-posts.index')}}">Trashed Posts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    @yield('content')
                 </div>
             </div>
         </div>
-    </div>
+    @else
+                    @yield('content')
+    @endauth
+</main>
 </x-app-layout>

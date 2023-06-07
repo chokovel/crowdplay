@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('address');
             $table->string('artprofession');
             $table->string('portfoliolink');
+            $table->string('image');
             $table->text('bio');
+            $table->boolean('verified')->default(false);
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+body::before{
+    display: block;
+    content: '';
+    height: 60px;
+}
+body p, a {
+    font-size: 1rem;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none !important;
+}
+
+ul.tags {
+    padding-left:0 !important;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 3rem !important;
+    left: 5%;
+    padding: 1.25rem;
+    /* padding-bottom: 1.25rem; */
+    width:50%;
+    color: #fff !important;
+    text-align:left !important;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.5)) !important;
+}
+
+@media (max-width: 450px) {
+    .carousel-caption {
+        padding: 1.25rem;
+        width:90% !important;
+        text-align: center !important;
+    }
+
+}
+
+
+.navbar-toggler{
+    background: #000 !important;
+}
+
+.custom-nav a.nav-link {
+    color: black !important;
+}
+.custom-nav a.nav-link:hover {
+    color: #1FA4F1 !important;
+}
+
+/* fun-fact */
+
+.counter-box {
+    display: block;
+    background: #fff;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #1FA4F1 !important;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #1FA4F1 !important;
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+.counter-box .counter {
+    color: #000 !important;
+}
+/* fun-fact  */
+
+.blue-button{
+    border-radius: 0px 16px 0px 16px;
+    transition: 0.4s;
+    flex: 1;
+    padding: 5px 10px;
+    /* width: 45%; */
+    margin: 0 auto;
+    background-color: #1FA4F1;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 16px rgb(255 255 255 / 20%);
+}
+.blue-button:hover{
+    border-radius: 16px 0px 16px 0px;
+    transition: 0.4s;
+    background-color: #fff;
+    color: #1FA4F1;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 16px rgb(31 164 241 / 35%);
+    transition: 1s ease;
+    transition: 0.4s;
+}
+.pinkotab-heading h2{
+    color:#1FA4F1;
+    padding-bottom: 20px;
+}
+
+.pinkotab-heading h3{
+    color:rgb(31, 164, 241);
+}
+.pinkotab-heading p{
+    color:#1FA4F1;
+    font-size: 1.5rem;
+}
+
+/* our event */
+.event {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.52857143;
+    color: #515253;
+    background-color: #f5f7fa;
+  }
+  
+  .widget .panel, .widget.panel {
+    overflow: hidden;
+  }
+  
+  .widget {
+    margin-bottom: 20px;
+    border: 0;
+  }
+  
+  .row-table {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .row-flush>[class*=col-] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .row-table>[class*=col-] {
+    display: table-cell;
+    float: none;
+    table-layout: fixed;
+    vertical-align: middle;
+  }
+  
+  .widget .lateral-picture {
+    position: relative;
+    display: block;
+    height: 240px;
+    width: auto;
+    overflow: hidden;
+  }
+  
+  .widget .lateral-picture>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+    width: auto;
+  }
+  
+  .align-middle {
+    vertical-align: middle;
+  }
+  
+  .p-lg {
+    padding: 15px!important;
+  }
+  
+ .btn-event {
+    float: right !important;
+    border-radius: 3px;
+    font-size: 13px;
+    border-color: transparent;
+    -webkit-appearance: none;
+    outline: 0!important;
+    -webkit-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+  }
+/* our event end */
+
+.solutions-wrapper {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+    background: url(../img/solution-line.png) no-repeat scroll center 120px;
+}
+.solutions-wrapper a {
+    text-decoration: none;
+}
+.our-solutions {
+    position: relative;
+    margin: 45px 5px 5px 5px;
+    padding: 40px 15px 32px 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #1FA4F1;
+    border-radius: 8px 8px;
+    transition: all 0.4s;
+    box-shadow:
+                1px 1px #1FA4F1,
+                2px 2px #1FA4F1,
+                3px 3px #1FA4F1;
+    transform: translateX(-3px);
+}
+.solutions-title {
+    color:lightblue !important;
+}
+.bi {
+    color:#fff;
+    width: 50px;
+    height: 50px;
+    padding-bottom: 5px;
+}
+.img-box {
+    border-radius: 8px;
+    box-shadow: 0px 8px 40px 0 rgb(0 0 0 25%);
+    width: 100%;
+}
+.about h2 {
+    color:#1FA4F1;
+    font-weight: bold;
+}
+
+/* services */
+
+.bg {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+    background: 
+    linear-gradient(to bottom, rgba(9, 59, 61, 0.85), rgba(104, 9, 48, 0.85)),
+    url(../img/marketing-media.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 250px; */
+    background-attachment: fixed;
+}
+.tab-content {
+    padding: 20px 0;
+}
+
+/* volunteer */
+
+.volunteer-wrapper {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+    background: 
+    linear-gradient(to bottom, rgba(24, 108, 110, 0.75), rgba(177, 67, 177, 0.55)),
+    url(../img/bg3.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 250px; */
+    background-attachment: fixed;
+}
+.donate-wrapper {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+    background: 
+    linear-gradient(to bottom, rgba(24, 108, 110, 0.75), rgba(177, 67, 177, 0.55)),
+    url(../img/school-children.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 250px; */
+    background-attachment: fixed;
+}
+
+/* read more */
+
+a.read-more {
+    color: #000;
+}
+a.read-more:hover {
+    color: #38CDD2;
+}
+/* read more **********/
+
+/* team */
+
+.our-team {
+    position: relative;
+    margin: 45px 5px 5px 5px;
+    padding: 10px 15px 32px 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #1FA4F1;
+    border-radius: 8px 8px;
+    transition: all 0.4s;
+    box-shadow:
+                1px 1px #1FA4F1,
+                2px 2px #1FA4F1,
+                3px 3px #1FA4F1;
+    transform: translateX(-3px);
+}
+
+/* client */
+.pinkotab-client img{
+    width: 150px;
+}
+.pinkotab-client li {
+    list-style-type: none;
+    width: 50%;
+    margin: auto;
+}
+
+/* Style inputs */
+.contact input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .contact input[type=submit] {
+    background-color: #B9185B;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .contact input[type=submit]:hover {
+    background-color: #38CDD2;
+  }
+  
+  /* Style the container/contact section */
+  .contact .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .contact .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .contact .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
+
+  .contact h5 {
+      color: #1FA4F1;
+  }
+  .contact a {
+      color: #fff;
+      list-style-type: none;
+  }
+  .contact a:hover {
+      color: #1FA4F1;
+  }
+
+  ul.footer_social {
+    display: flex;
+    padding: 15px;
+    text-align: center;
+    list-style-type: none;
+  }
+.footer_social li{
+      padding: 10px;
+      width: 50%;
+      margin: 0 auto;
+  }
+
+
+  a.footer-links {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+  }
+  a.footer-links:hover {
+      color: #1FA4F1;
+  }
+
+
+@media (min-width: 768px) {
+    .news-input {
+        width:50% !important;
+    }
+
+    .contact .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+ 
+} 
+@media (min-width: 450px) {
+    .client .d-flex {
+        display: blok !important; 
+    }
+    .pinkotab-client li {
+        padding: 20px;
+    }
+    .map {
+        width: 300px;
+    }
+} 

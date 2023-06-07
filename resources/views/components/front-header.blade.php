@@ -28,7 +28,7 @@
             </button>
          </div>
       <!-- back to top end -->
-      
+
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
             <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
@@ -107,7 +107,7 @@
                                  </a>
                                  </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="contact.html"><i class="fa-light fa-calendar-days"></i> Book A Schedule</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -125,7 +125,7 @@
          </header>
       <!-- header area end -->
 
-      
+
       <!-- mobile menu style start -->
          <div class="tp-offcanvas-area fix">
          <div class="tp-side-info">

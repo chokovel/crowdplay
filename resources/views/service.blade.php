@@ -56,7 +56,7 @@
             </button>
          </div>
       <!-- back to top end -->
-      
+
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
             <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
@@ -127,7 +127,7 @@
                                           <li>
                                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
                                           </li>
-                                                
+
                                           @else
                                           <li>
                                              <a href="{{ route('login') }}">Log in</a>
@@ -246,7 +246,7 @@
             </div>
          </section>
          <!-- about breadcrumb area end -->
-         
+
          <!-- our service area start -->
          <section class="tp-service-breadcrumb-area fix pt-120 pb-90 p-relative">
             <div class="tp-service-breadcrumb-shape d-none d-lg-block">
@@ -534,7 +534,7 @@
                                  <div class="tp-testimonial-2-wrapper">
                                     <div class="tp-testimonial-2-shape">
                                        <img src="assets/img/testimonial/home-2/shape.png" alt="">
-                                    </div>
+               </div>
                                     <p>“I had a show and I needed experienced artists to partner with, CrowdPlay was the perfect place where I got an experienced artist to join me in my show.</p>
                                     <h3 class="tp-testimonial-title">Nicholas Ewung</h3>
                                     <span>Client</span>
@@ -692,7 +692,7 @@
                               </ul> -->
                            </div>
                         </div>
-                        
+
                         <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
                            <div class="tp-footer-widget-3 tp-footer-ml-45 mb-30">
                               <span class="mb-30">Our Services</span>
@@ -714,7 +714,7 @@
                <div class="container">
                   <div class="row align-items-center justify-content-center">
                      <div class="col-lg-12">
-                        <p class="text-center">Copyright © 
+                        <p class="text-center">Copyright ©
                             <script>document.write(new Date().getFullYear())</script> CrowdPlay. All Rights Reserved</p>
                      </div>
                   </div>

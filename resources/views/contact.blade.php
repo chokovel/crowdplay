@@ -27,25 +27,6 @@
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
 
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
@@ -56,42 +37,9 @@
             </button>
          </div>
       <!-- back to top end -->
-      
+
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
-            <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
-               <div class="container-fluid">
-                  <div class="row align-items-center">
-                     <div class="col-lg-8">
-                        <div class="tp-header-top-info">
-                           <ul>
-                              <li>
-                                 <a href="tel:008757845682"><span><i class="flaticon-telephone-call"></i></span>(00) 875 784 5682</a>
-                              </li>
-                              <li>
-                                 <a href="mailto:Kleasoinfo@gmail.com"><span><i class="flaticon-mail"></i></span>cleasoinfo@gmail.com</a>
-                              </li>
-                              <li>
-                                 <a href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423" target="_blank">
-                                 <span><i class="flaticon-location"></i></span>
-                                 238, Arimantab, Moska  - USA.
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="tp-header-top-social text-lg-end text-xl-center text-xxl-end">
-                           <span>Follow Us:</span>
-                           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                           <a href="#"><i class="fa-brands fa-skype"></i></a>
-                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -127,7 +75,7 @@
                                           <li>
                                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
                                           </li>
-                                                
+
                                           @else
                                           <li>
                                              <a href="{{ route('login') }}">Log in</a>
@@ -187,6 +135,11 @@
             </div>
             <div class="tp-mobile-menu-pos"></div>
             <div class="tp-side-content p-relative">
+                 @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                <div class="tp-sidebar__contact">
                   <h4 class="tp-sidebar-title">Contact Info</h4>
                   <ul>
@@ -220,7 +173,7 @@
 
  <main>
          <!-- about breadcrumb area start -->
-            <section class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/art-bg.jpg">
+            <section class="breadcrumb__area breadcrumb-style pt-100 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/img-2.jpg">
                <div class="breadcrumb__bg-overlay m-img"></div>
                <div class="breadcrumb-shape  d-none d-lg-block">
                   <div class="shape-1">
@@ -248,8 +201,13 @@
          <!-- about breadcrumb area end -->
 
          <!-- contact area start -->
-            <div class="tp-contact-area pt-120 pb-120">
+            <div class="tp-contact-area pt-80 pb-80">
                <div class="container">
+                 @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="tp-contact-phone d-sm-flex justify-content-xl-end">
@@ -288,90 +246,85 @@
                </div>
             </div>
          <!-- contact area end -->
-         
+
 
          <!-- contact input area start -->
-            <section class="tp-contact-input pt-100">
+            <section class="tp-contact-input pt-50">
                <div class="container">
                   <div class="row justify-content-center">
 
-                  @if (session('success'))
-                     <div class="alert alert-success">
-                        {{ session('success') }}
-                     </div>
-                  @endif
-                  @if($errors->any())
-                        <div class="alert alert-danger">
-                           <ul>
-                           @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                           @endforeach
-                           </ul>
-                        </div>
-                  @endif
-
-                  <div class="col-lg-10">
+                  <div class="col-lg-8">
                      <div class="tp-portfolio-2-section-title-wrapper text-center">
                         <span class="tp-section__title-pre-2">
                            CONTACT US
                         </span>
                         <h3 class="tp-section__title">GET IN TOUCH</h3>
                      </div>
-                        <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/form-input.png">
-                           <div class="tp-brands-from-overlay"></div>
-                              <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
-                                 @csrf
-                                 <div class="row tp-gx-20">
-                                    <div class="col-12 col-sm-6">
-                                          <div class="tp-brands-from-input contact-mb">
-                                             <input name="name" type="text" placeholder="Full Name:" required>
-                                          </div>
-                                          <div class="tp-brands-from-input contact-mb">
-                                             <input name="phone" type="number" placeholder="Phone:" required>
-                                          </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6"  id="services_option">
-                                          <div class="tp-brands-from-input contact-mb">
-                                             <input name="email" type="email" placeholder="Email Address:" required>
-                                          </div>
-                                          <div class="tp-brands-from-input contact-mb">
-                                             <select id="book-type" name="service" class="wide" style="display: none;" required>
-                                                <option>Choose Service:</option>
-                                                <option id="artist" value="Book Artist">Book Artist</option>
-                                                <option id="session" value="Book Session">Book Session</option>
-                                                <!-- <option value="Carpet Service">Carpet Service</option> -->
-                                             </select>
-                                             <div class="nice-select wide" tabindex="0">
-                                                <span id="services_option" class="current">CrowdPlay Services:</span>
-                                                <ul id="services_option" class="list">
-                                                      <li data-value="Choose Service:" class="option selected">Choose Service:</li>
-                                                      <li id="artist" data-value="Book Artist" class="option">Book Artist</li>
-                                                      <li id="session" data-value="Book Session" class="option">Book Session</li>
-                                                </ul>
-                                             </div>
-                                          </div>
-                                    </div>
-                                    <div id="comment1" class="col-12 tp-brands-from-input contact-mb" style="display:none;">
-                                          Send us details of your choice of artist, event date and time, location and any other important note and we will get back to you shortly.
-                                    </div>
-                                    <div id="comment2" class="col-12 tp-brands-from-input contact-mb" style="display:none;">
-                                          Full Session: Eight Thousand Naira <br/>
-                                          Half Session: Four Thousand Naira <br/>
-                                          Choose a session and give details of the activity you want to perform and we will get back to you with the schedule and payment details.
-                                    </div>
-                                    <div class="col-12">
-                                          <div class="tp-brands-from-input contact-textarea">
-                                             <textarea name="message" placeholder="Write Message..." required></textarea>
-                                          </div>
-                                    </div>
-                                    <p class="ajax-response"></p>
-                                 </div>
-                                 <div class="tp-contact-submit text-center mt-20">
-                                    <button class="tp-btn" type="submit">Send Message <i class="fa-regular fa-arrow-right-long"></i></button>
-                                 </div>
-                              </form>
+                        <div class="tp-contact-from p-relative" data-background="assets/img/breadcrumb/img-2.jpg">
+                            <div class="tp-brands-from-overlay"></div>
+                            <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                                @endif
 
-                           </div>
+                                @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                                @endif
+                                <div class="row tp-gx-20">
+                                <div class="col-12 col-sm-6">
+                                    <div class="tp-brands-from-input contact-mb">
+                                    <input name="name" type="text" placeholder="Full Name:" required>
+                                    </div>
+                                    <div class="tp-brands-from-input contact-mb">
+                                    <input name="phone" type="number" placeholder="Phone:" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6" id="services_option">
+                                    <div class="tp-brands-from-input contact-mb">
+                                    <input name="email" type="email" placeholder="Email Address:" required>
+                                    </div>
+                                    <div class="tp-brands-from-input contact-mb">
+                                    <select id="book-type" name="service" class="wide" style="display: none;" required>
+                                        <option>Choose Service:</option>
+                                        <option id="artist" value="Book Artist">Book Artist</option>
+                                        <option id="session" value="Book Session">Book Session</option>
+                                    </select>
+                                    <div class="nice-select wide" tabindex="0">
+                                        <span id="services_option" class="current">CrowdPlay Services:</span>
+                                        <ul id="services_option" class="list">
+                                        <li data-value="Choose Service:" class="option selected">Choose Service:</li>
+                                        <li id="artist" data-value="Book Artist" class="option">Book Artist</li>
+                                        <li id="session" data-value="Book Session" class="option">Book Session</li>
+                                        </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div id="comment1" class="col-12 tp-brands-from-input contact-mb" style="display:none;">
+                                    Send us details of your choice of artist, event date and time, location and any other important note and we will get back to you shortly.
+                                </div>
+                                <div id="comment2" class="col-12 tp-brands-from-input contact-mb" style="display:none;">
+                                    Full Session: Eight Thousand Naira <br/>
+                                    Half Session: Four Thousand Naira <br/>
+                                    Choose a session and give details of the activity you want to perform and we will get back to you with the schedule and payment details.
+                                </div>
+                                <div class="col-12">
+                                    <div class="tp-brands-from-input contact-textarea">
+                                    <textarea name="message" placeholder="Write Message..." required></textarea>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="tp-contact-submit text-center mt-20">
+                                    <button class="btn btn-primary btn-large" type="submit">Send Message <i class="fa-regular fa-arrow-right-long"></i></button>
+                                </div>
+                            </form>
+                            </div>
+
+
                         </div>
                      </div>
                   </div>
@@ -394,7 +347,7 @@
 
       </main>
 
-      
+
 
 <!-- footer area start -->
          <footer class="tp-footer-area p-relative">
@@ -406,7 +359,7 @@
                </div>
             <div class="tp-footer-inner-content tp-footer-plr">
                <div class="container-fluid">
-                  <div class="tp-footer-logo-area pt-100 pb-75">
+                  <div class="tp-footer-logo-area pt-80 pb-55">
                   <div class="tp-footer-logo-content p-relative">
                      <div class="tp-footer-logo-content-shape d-none d-xl-block">
                         <img class="shape-3" src="assets/img/footer/shape-3.png" alt="">
@@ -434,7 +387,7 @@
                   </div>
                   </div>
                </div>
-               <div class="tp-footer-widget-area pb-60">
+               <div class="tp-footer-widget-area pb-40">
                   <div class="container-fluid">
                      <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 col-xl-4">
@@ -489,7 +442,7 @@
                               </ul> -->
                            </div>
                         </div>
-                        
+
                         <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
                            <div class="tp-footer-widget-3 tp-footer-ml-45 mb-30">
                               <span class="mb-30">Our Services</span>
@@ -511,7 +464,7 @@
                <div class="container">
                   <div class="row align-items-center justify-content-center">
                      <div class="col-lg-12">
-                        <p class="text-center">Copyright © 
+                        <p class="text-center">Copyright ©
                             <script>document.write(new Date().getFullYear())</script> CrowdPlay. All Rights Reserved</p>
                      </div>
                   </div>
@@ -560,5 +513,6 @@
         });
     });
 </script>
+
    </body>
 </html>

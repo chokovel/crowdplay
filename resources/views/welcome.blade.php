@@ -56,7 +56,7 @@
             </button>
          </div>
       <!-- back to top end -->
-      
+
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
             <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
@@ -127,7 +127,7 @@
                                           <li>
                                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
                                           </li>
-                                                
+
                                           @else
                                           <li>
                                              <a href="{{ route('login') }}">Log in</a>
@@ -251,7 +251,7 @@
                                           <h3 class="tp-hero__title">CrowdPlay Studio</h3>
                                        </div>
                                        <p>Your First Artist Profiling Platform And Recording Studio</p>
-                                       <div class="row"> 
+                                       <div class="row">
                                           <div class="col-12 col-md-8">
                                              <ul class="tp-hero-list">
                                                 <li><i class="fa-light fa-circle-check"></i> Highly Rated Artists</li>
@@ -294,11 +294,11 @@
                                           <!-- <span class="tp-hero__title-pre">
                                              24/7 cleaning service
                                           </span> -->
-                                          <h3 class="tp-hero__title"> Are you an Artist? <br> 
+                                          <h3 class="tp-hero__title"> Are you an Artist? <br>
                                         Express yourself <br> with CrowdPlay</h3>
                                        </div>
                                        <p>Register to showcase your talent to the world</p>
-                                     
+
                                        <div class="tp-hero-btn">
                                           <a class="tp-btn-2" href="{{'/artist-form'}}">
                                              <span class="tp-hero-btn-text">Become an Artist</span>
@@ -331,7 +331,7 @@
                                           <h3 class="tp-hero__title">Create, Produce, Mix <br> With CrowdPlay</h3>
                                        </div>
                                        <p>Record your Music Videos and Audios, Jingles, Advertisements,<br>  Broadcasting, Interviews, Announcements etc. </p>
-                                      
+
                                        <div class="tp-hero-btn">
                                           <a class="tp-btn-2" href="{{'/contact'}}">
                                              <span class="tp-hero-btn-text">Book a Session</span>
@@ -400,7 +400,7 @@
          </div>
          </section> -->
       <!-- brands area end -->
-         
+
       <!-- features area start -->
          <section class="tp-features-area p-relative fix pb-95">
          <div class="tp-brands-filter">
@@ -427,7 +427,7 @@
                   <div class="tp-features-item-wrapper mb-50 wow fadeInUp" data-wow-duration="1s"
                   data-wow-delay=".4s">
                      <div class="tp-features-item-thumb text-center">
-                        <img src="assets/img/brand/img-2.jpg" alt=""> 
+                        <img src="assets/img/brand/img-2.jpg" alt="">
                      </div>
                      <div class="tp-features-item-content">
                         <h4 class="tp-features-item-title"><a href="service-details.html">Recording Studio</a></h4>
@@ -1023,7 +1023,7 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="col-md-6 col-lg-4"> 
+                  <div class="col-md-6 col-lg-4">
                      <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-blog-thumb">
@@ -1039,7 +1039,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6 col-lg-4"> 
+                  <div class="col-md-6 col-lg-4">
                      <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-blog-thumb">
@@ -1055,7 +1055,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6 col-lg-4"> 
+                  <div class="col-md-6 col-lg-4">
                      <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-blog-thumb">
@@ -1170,7 +1170,7 @@
                               </ul> -->
                            </div>
                         </div>
-                        
+
                         <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
                            <div class="tp-footer-widget-3 tp-footer-ml-45 mb-30">
                               <span class="mb-30">Our Services</span>
@@ -1192,7 +1192,7 @@
                <div class="container">
                   <div class="row align-items-center justify-content-center">
                      <div class="col-lg-12">
-                        <p class="text-center">Copyright © 
+                        <p class="text-center">Copyright ©
                             <script>document.write(new Date().getFullYear())</script> CrowdPlay. All Rights Reserved</p>
                      </div>
                   </div>

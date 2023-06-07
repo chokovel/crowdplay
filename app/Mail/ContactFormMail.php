@@ -5,64 +5,35 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class ContactFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-     public $details;
+private $formData = [];
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct($details)
-    {
-        $this->details = $details;
-    }
+/**
+ * Create a new message instance.
+ *
+ * @param  array  $formData
+ * @return void
+ */
+public function __construct(array $formData)
+{
+    $this->formData = $formData;
+}
 
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Contact Form Mail',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'view.name',
-    //     );
-    // }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    // public function attachments(): array
-    // {
-    //     return [];
-    // }
-
-     /**
-     * Build the message.
-     *
-     * @return $this
-     */
+/**
+ * Build the message.
+ *
+ * @return $this
+ */
     public function build()
     {
-        return $this->subject('New Contact Form Submission')
-                    ->view('contact');
+        return $this->from('crowdplayabuja@gmail.com', 'CrowdPlay Service')
+            ->subject($this->formData['subject'] ?? 'Contact Form Submission') // Use the 'subject' key from the form data, or fallback to a default subject
+            ->view('email.index')
+            ->with('formData', $this->formData);
     }
-
-
 }
