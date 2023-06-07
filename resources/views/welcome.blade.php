@@ -118,7 +118,7 @@
                                        </li>
                                        <li> <a href="{{'#about'}}">About</a> </li>
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <!-- <li> <a href="{{'/contact'}}">Contact</a></li> -->
                                            @if (Route::has('login'))
@@ -766,7 +766,7 @@
                   </div>
                   <div class="col-lg-4">
                      <div class="tp-portfolio-btn text-lg-end">
-                        <a class="tp-btn" href="project.html">All Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
+                        <a class="tp-btn" href="{{'/gallery'}}">All Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
                      </div>
                   </div>
                </div>

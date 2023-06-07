@@ -25,7 +25,8 @@
                         @foreach ($artists as $artist)
                             <tr>
                                 <td>
-                                    <img src="{{ asset(str_replace('public','storage', $artist->image)) }}" alt="{{ $artist->stagename }}" style="width:75px">
+                                    {{-- <img src="{{ asset(str_replace('public','storage', $artist->image)) }}" alt="{{ $artist->stagename }}" style="width:75px"> --}}
+                                    <img src="{{ asset($artist->image) }}" alt="{{ $artist->stagename }}" style="width:75px">
                                 </td>
                                 <td>
                                     {{ $artist->firstname }} {{ $artist->lastname }}

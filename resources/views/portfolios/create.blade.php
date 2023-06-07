@@ -6,15 +6,15 @@
 
     <div class="card card-default">
         <div class="card-header">
-            {{'Create Photo'}}
+            {{'Create Portfolio'}}
         </div>
         <div class="card-body">
-        
+
             @include('partials.errors')
 
-            <form action="{{ route('photos.store') }}" method="POST" enctype= multipart/form-data>
+            <form action="{{ route('portfolios.store') }}" method="POST" enctype= multipart/form-data>
                 @csrf
-        
+
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" id="title" class="form-control" name="title">
@@ -23,22 +23,22 @@
                     <label for="description">Description</label>
                     <textarea type="text" id="description" col="3" class="form-control" name="description"></textarea>
                 </div>
-                
+
                 <div class="form-group">
-                    <input type="hidden" id="album_id" class="form-control" name="album_id" value="$album_id">
-                </div>
-               
-                <div class="form-group">
-                    <label for="photo">Image</label>7
-                    <input type="file" id="photo" class="form-control" name="photo" value=""> 
+                    <input type="hidden" id="project_id" class="form-control" name="project_id" value="$project_id">
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-success">{{'Create photo'}}</button>
+                    <label for="portfolio">Image</label>
+                    <input type="file" id="portfolio" class="form-control" name="portfolio" value="">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success">{{'Create portfolio'}}</button>
                 </div>
             </form>
         </div>
     </div>
-    
+
 </div>
 @endsection

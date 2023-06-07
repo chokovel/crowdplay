@@ -4,12 +4,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
-use App\Models\Album;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,7 @@ Route::get('/', function () {
 Route::get('/service', function () {
     return view('service');
 });
-Route::get('/artists', function () {
-    return view('artists');
-});
+
 Route::get('/artist-details', function () {
     return view('artist-details');
 });
@@ -49,8 +48,10 @@ Route::get('/contact', function () {
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
-Route::get('/gallery', [WelcomeController::class, 'gallery'])->name('gallery.index');
-Route::get('/photos/{album}', [WelcomeController::class, 'photos'])->name('albums.photos');
+Route::get('/projects-page', [WelcomeController::class, 'project'])->name('projects.index');
+Route::get('/portfolios/{project}', [WelcomeController::class, 'portfolios'])->name('projects.photos');
+
+Route::get('/artists-page', [WelcomeController::class, 'artist'])->name('artist-page');
 
 
 
@@ -77,7 +78,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::resource('events', App\Http\Controllers\EventsController::class);
 
-    Route::resource('albums', App\Http\Controllers\AlbumsController::class);
+    Route::resource('projects', App\Http\Controllers\ProjectsController::class);
 
     Route::resource('artists', App\Http\Controllers\ArtistController::class);
     Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
@@ -88,10 +89,10 @@ Route::middleware(['auth'])->group(function() {
 
 
 
-    // Route::resource('photos', App\Http\Controllers\PhotosController::class);
-    Route::get('/photos/create/{id}', [App\Http\Controllers\PhotosController::class, 'create']);
-    Route::get('/photos/index', [App\Http\Controllers\PhotosController::class, 'index'])->name('photos.index');
-    Route::post('/photos/store', [App\Http\Controllers\PhotosController::class, 'store'])->name('photos.store');
+    // Route::resource('portfolios', App\Http\Controllers\PortfoliosController::class);
+    Route::get('/portfolios/create/{id}', [App\Http\Controllers\PortfoliosController::class, 'create']);
+    Route::get('/portfolios/index', [App\Http\Controllers\PortfoliosController::class, 'index'])->name('portfolios.index');
+    Route::post('/portfolios/store', [App\Http\Controllers\PortfoliosController::class, 'store'])->name('portfolios.store');
 
     Route::get('trashed-posts', [App\Http\Controllers\PostsController::class, 'trashed'])->name('trashed-posts.index');
     Route::put('restore-posts/{post}', [App\Http\Controllers\PostsController::class, 'restore'])->name('restore-posts');

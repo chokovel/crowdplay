@@ -4,14 +4,14 @@
 @section('content')
 <div class="container">
 <div class="d-flex justify-content-end mb-2">
-<a href="{{ route('albums.create') }}" class="btn btn-success">Create Album</a>
+<a href="{{ route('projects.create') }}" class="btn btn-success">Create Project</a>
 </div>
 
 <div class="card card-default">
-<div class="card-header">Albums</div>
+<div class="card-header">Projects</div>
 
 <div class="card-body">
-@if($albums->count() > 0)
+@if($projects->count() > 0)
 <table class="table">
     <thead>
         <th>Image</th>
@@ -21,21 +21,21 @@
         <th></th>
     </thead>
     <tbody>
-        @foreach ($albums as $album)
+        @foreach ($projects as $project)
             <tr>
                 <td>
-                    <img src=" {{ asset(str_replace('public', 'storage', $album->cover_image)) }}" alt=" {{$album->name}} " style="width:75px">
+                    <img src=" {{ asset(str_replace('public', 'storage', $project->cover_image)) }}" alt=" {{$project->name}} " style="width:75px">
                 </td>
 
                 <td>
-                    {{ $album->name }}
+                    {{ $project->name }}
                 </td>
 
                 <td>
-                    <a href="{{ route('albums.edit', $album->id) }}" class="btn btn-info btn-sm"> Edit </a>
+                    <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-info btn-sm"> Edit </a>
                 </td>
                 <td>
-                    <button class="btn btn-danger btn-sm" onclick="handleDelete( {{$album->id}} )"> Delete </button>
+                    <button class="btn btn-danger btn-sm" onclick="handleDelete( {{$project->id}} )"> Delete </button>
                 </td>
 
             </tr>
@@ -49,10 +49,10 @@
 </div> -->
 @else
 
-<h3 class="text-center">No Album Yet</h3>
+<h3 class="text-center">No Project Yet</h3>
 @endif
 
-        <form action="" method="POST" id="deleteAlbumForm">
+        <form action="" method="POST" id="deleteProjectForm">
                 @csrf
 
                 @method('DELETE')
@@ -62,12 +62,12 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModaLabel">Delete Album</h5>
+                        <h5 class="modal-title" id="deleteModaLabel">Delete Project</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p class="text-center text-bold">
-                            Are you sure you want to delete Album?
+                            Are you sure you want to delete Project?
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -82,7 +82,7 @@
 </div>
 
         <ul class="pagination-wrap text-center mt-30">
-            {{ $albums->links()}}
+            {{ $projects->links()}}
         </ul>
 </div>
 @endsection
@@ -91,9 +91,9 @@
     <script>
         function handleDelete(id) {
 
-            var form = document.getElementById('deleteAlbumForm');
+            var form = document.getElementById('deleteProjectForm');
 
-            form.action = '/albums/' + id
+            form.action = '/projects/' + id
 
             $('#deleteModal').modal('show')
         }

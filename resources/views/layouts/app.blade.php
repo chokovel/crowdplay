@@ -150,7 +150,7 @@ a:hover{
                             <a href="{{ route('events.index')}}">Events</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{ route('albums.index')}}">Album</a>
+                            <a href="{{ route('projects.index')}}">Project</a>
                         </li>
                     </ul>
 

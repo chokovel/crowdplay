@@ -202,64 +202,85 @@
                     </span>
                     <h3 class="tp-section__title">Artist Details</h3>
                     </div>
-                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/form-input.png">
-                        <div class="tp-brands-from-overlay"></div>
-                        <form id="contact-form" action="{{ isset($artist) ? route('artists.update', $artist->id) : route('artists.store') }}" method="POST" enctype="multipart/form-data">
+                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/team-1.jpg">
+                        {{-- <div class="tp-brands-from-overlay"></div> --}}
+                        <form action="{{ route('artists.form') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-                                @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
 
-                                @if(isset($artist))
-                                    @method('PUT')
-                                @endif
-                                <div class="row tp-gx-20">
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="firstname" type="text" placeholder="First Name:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="stagename" type="text" placeholder="Stage Name:">
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <input type="text" id="firstname" name="firstname" class="form-control" required>
+                                    <label for="firstname">First Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="lastname" type="text" placeholder="Last Name:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="phone" type="number" placeholder="Phone:" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="lastname" name="lastname" class="form-control" required>
+                                    <label for="lastname">Last Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="email" type="email" placeholder="Email:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="address" type="text" placeholder="Address:" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="stagename" name="stagename" class="form-control">
+                                    <label for="stagename">Stage Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="artprofession" type="text" placeholder="Art Profession: e.g Musician" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="portfoliolink" type="text" placeholder="Portfolio Link e.g https://" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="phone" name="phone" class="form-control" required>
+                                    <label for="phone">Phone</label>
                                 </div>
-                                <div class="col-12">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input class="pt-3" type="file" name="image" placeholder="Image">
-                                    </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <label for="email">Email</label>
                                 </div>
-                                <div class="col-12">
-                                    <div class="tp-brands-from-input contact-textarea">
-                                    <textarea name="bio" placeholder="Brief professional biography..." required></textarea>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="address" name="address" class="form-control" required>
+                                    <label for="address">Address</label>
                                 </div>
-                                <p class="ajax-response"></p>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="artprofession" name="artprofession" class="form-control" required>
+                                    <label for="artprofession">Art Profession (e.g., Musician)</label>
                                 </div>
-                                <div class="tp-contact-submit text-center mt-20">
-                                <button class="tp-btn" type="submit">Send<i class="fa-regular fa-arrow-right-long"></i></button>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="portfoliolink" name="portfoliolink" class="form-control" required>
+                                    <label for="portfoliolink">Portfolio Link (e.g., https://)</label>
                                 </div>
-                            </form>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="md-form mb-3">
+                                    <input type="file" id="image" name="image" class="form-control-file">
+                                    <label for="image">Image</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="md-form mb-3">
+                                    <textarea id="bio" name="bio" class="form-control md-textarea" rows="4" required></textarea>
+                                    <label for="bio">Brief Professional Biography</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary" type="submit">Send <i class="fas fa-arrow-right ml-1"></i></button>
+                        </div>
+                    </form>
+
                         </div>
                     </div>
                     </div>

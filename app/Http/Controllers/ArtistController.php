@@ -41,14 +41,18 @@ class ArtistController extends Controller
             'address' => 'required',
             'artprofession' => 'required',
             'portfoliolink' => 'required',
-            'image' => 'required',
+            'image' => 'file|mimes:jpeg,png,jpg,webp,gif',
             'bio' => 'required',
         ]);
+
+        if($request->hasFile('image')) {
+            $image = $request->file('image')->store('public/images');
+        }
 
         $artist = Artist::create($data);
 
         // Associate the artist with the authenticated user
-        $user = auth()->user();
+        // $user = auth()->user();
 
         return redirect()->route('artists.index')->with('success', 'Artist created successfully.');
     }
@@ -83,14 +87,27 @@ class ArtistController extends Controller
             'address' => 'required',
             'artprofession' => 'required',
             'portfoliolink' => 'required',
-            'image' => 'required',
+            'image' => 'file|mimes:jpeg,png,jpg,webp,gif',
             'bio' => 'required',
         ]);
 
-        $artist->update($data);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('public/images');
+
+            // Delete the old image if it exists
+            if ($artist->image) {
+                Storage::delete($artist->image);
+            }
+
+            $artist->image = $image;
+        }
+
+        $artist->fill($data);
+        $artist->save();
 
         return redirect()->route('artists.index')->with('success', 'Artist updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -134,49 +151,29 @@ class ArtistController extends Controller
 
 
     public function artistform(Request $request)
-    {
-        // Validate the form data
-        $validatedData = $request->validate([
+{
+
+        $data = $request->validate([
             'firstname' => 'required',
-            'stagename' => 'required',
+            'stagename' => 'nullable',
             'lastname' => 'required',
             'phone' => 'required',
             'email' => 'required|email',
             'address' => 'required',
             'artprofession' => 'required',
             'portfoliolink' => 'required',
-            'image' => 'required|image',
+            'image' => 'file|mimes:jpeg,png,jpg,webp,gif',
             'bio' => 'required',
         ]);
 
-        // Upload the image file
-        // $imagePath = $request->file('image')->store('public/images');
         if($request->hasFile('image')) {
             $image = $request->file('image')->store('public/images');
         }
 
-        // Create a new artist record
-        $artist = new Artist();
-        $artist->firstname = $request->input('firstname');
-        $artist->stagename = $request->input('stagename');
-        $artist->lastname = $request->input('lastname');
-        $artist->phone = $request->input('phone');
-        $artist->email = $request->input('email');
-        $artist->address = $request->input('address');
-        $artist->artprofession = $request->input('artprofession');
-        $artist->portfoliolink = $request->input('portfoliolink');
-        $artist->image = $imagePath;
-        $artist->bio = $request->input('bio');
-        $artist->verified = false;
-        $artist->save();
+        $artist = Artist::create($data);
+        // dd($artist);
 
-        // Send email notification
-        $recipientEmail = 'crowdplayabuja@gmail.com'; // Update with the recipient email address
-        Mail::to($recipientEmail)->send(new NewArtistNotification($artist));
-
-        // Flash success message
-        session()->flash('success', 'Your registration was successful. We will get back to you shortly.');
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Registered Successfully, We will get back to you shortly.');
     }
+
 }
