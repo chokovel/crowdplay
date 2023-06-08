@@ -43,7 +43,15 @@ class ArtistController extends Controller
             'portfoliolink' => 'required',
             'image' => 'required',
             'bio' => 'required',
+            'verified' => 'nullable|boolean',
         ]);
+
+            if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store('images', 'public'); // Store the image in the "public" disk under the "images" directory
+
+            $data['image'] = $imagePath; // Save the image path in the $data array
+        }
 
         $artist = Artist::create($data);
 
@@ -72,7 +80,7 @@ class ArtistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Artist $artist)
+    public function update(Request $request, $id)
     {
         $data = $request->validate([
             'firstname' => 'required',
@@ -83,11 +91,23 @@ class ArtistController extends Controller
             'address' => 'required',
             'artprofession' => 'required',
             'portfoliolink' => 'required',
-            'image' => 'required',
+            'image' => 'nullable|image', // Allow the image field to be nullable
             'bio' => 'required',
         ]);
 
-        $artist->update($data);
+        $artist = Artist::findOrFail($id); // Find the artist to be updated
+
+        // If a new image is uploaded, process and store it
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store('images', 'public');
+            $data['image'] = $imagePath;
+        } else {
+            // If no new image is uploaded, retain the existing image
+            $data['image'] = $artist->image;
+        }
+
+        $artist->update($data); // Update the artist record with the new data
 
         return redirect()->route('artists.index')->with('success', 'Artist updated successfully.');
     }
@@ -131,6 +151,15 @@ class ArtistController extends Controller
 
         return redirect()->back();
     }
+
+    public function toggleVerification($id)
+    {
+        $artist = Artist::findOrFail($id);
+        $artist->update(['verified' => !$artist->verified]);
+
+        return redirect()->back()->with('success', 'Verification status toggled successfully.');
+    }
+
 
 
     public function artistform(Request $request)

@@ -152,6 +152,9 @@ a:hover{
                         <li class="list-group-item">
                             <a href="{{ route('albums.index')}}">Album</a>
                         </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('photos.index')}}">Photos</a>
+                        </li>
                     </ul>
 
                     <ul class="list-group mb-5">

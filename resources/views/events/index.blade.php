@@ -27,35 +27,35 @@
         @foreach ($events as $event)
             <tr>
                 <td>
-                    <img src=" {{ asset($event->image) }}" alt=" {{$event->title}} " style="width:75px">
+                    <img src=" {{ asset(str_replace('public' ,'storage', $event->image)) }}" alt=" {{$event->title}} " style="width:75px; height:75px; object-fit:cover;">
                 </td>
                 <td>
                     {{ $event->title }}
                 </td>
                 <td>
-                    <a href="{{ route('events.edit', $event->id) }}"> 
+                    <a href="{{ route('events.edit', $event->id) }}">
                         {{ $event->venue }}
                     </a>
                 </td>
                 <td>
-                    <a href="{{ route('events.edit', $event->id) }}"> 
+                    <a href="{{ route('events.edit', $event->id) }}">
                         {{ $event->start }}
                     </a>
                 </td>
                 <td>
-                    <a href="{{ route('events.edit', $event->id) }}"> 
+                    <a href="{{ route('events.edit', $event->id) }}">
                         {{ $event->end }}
                     </a>
-                </td>     
+                </td>
                 <td>
                     <a href="{{ route('events.edit', $event->id) }}" class="btn btn-info btn-sm"> Edit </a>
                 </td>
                 <td>
                     <button class="btn btn-danger btn-sm" onclick="handleDelete( {{$event->id}} )"> Delete </button>
-                </td> 
+                </td>
             </tr>
         @endforeach
-        
+
     </tbody>
 </table>
 
@@ -69,7 +69,7 @@
 
 <form action="" method="POST" id="deleteEventForm">
                 @csrf
-                 
+
                 @method('DELETE')
 
                  <!-- Modal -->

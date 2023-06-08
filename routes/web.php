@@ -81,6 +81,8 @@ Route::middleware(['auth'])->group(function() {
 
     Route::resource('artists', App\Http\Controllers\ArtistController::class);
     Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
+    Route::put('toggle-verification/{id}', [App\Http\Controllers\ArtistController::class, 'toggleVerification'])
+    ->name('toggle-verification');
 
 
     Route::get('pending-artist', [App\Http\Controllers\ArtistController::class, 'trashed'])->name('pending-artists.index');

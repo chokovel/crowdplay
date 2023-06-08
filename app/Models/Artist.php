@@ -28,6 +28,10 @@ class Artist extends Model
         'verified',
     ];
 
+    protected $casts = [
+        'verified' => 'boolean',
+    ];
+    
     public function user()
     {
         return $this->belongsTo(User::class);

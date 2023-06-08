@@ -18,11 +18,11 @@
     <tbody>
             <tr>
                 <td>
-                    <img src=" {{ asset($photo->cover_image) }}" alt=" {{$photo->name}} " style="width:75px">
+                    <img src=" {{ asset($photo->cover_image) }}" alt=" {{$photo->name}} " style="width:75px; height:75px; object-fit:cover;">
                 </td>
             </tr>
-        
-        
+
+
     </tbody>
 </table>
 

@@ -17,6 +17,7 @@
                         <th>Artist Name</th>
                         <th>Stage Name</th>
                         <th>Art Profession</th>
+                         <th>Verified</th>
                         <th>Action</th>
                         <th></th>
                         <th></th>
@@ -25,7 +26,7 @@
                         @foreach ($artists as $artist)
                             <tr>
                                 <td>
-                                    <img src="{{ asset(str_replace('public','storage', $artist->image)) }}" alt="{{ $artist->stagename }}" style="width:75px">
+                                    <img src="{{ asset('storage/' . $artist->image) }}" alt="{{ $artist->stagename }}" style="width:75px; height:75px; object-fit:cover;">
                                 </td>
                                 <td>
                                     {{ $artist->firstname }} {{ $artist->lastname }}
@@ -37,15 +38,40 @@
                                     {{ $artist->artprofession }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('artists.edit', $artist->id) }}" class="btn btn-info btn-sm">Edit</a>
-                                </td>
-                                <td>
+    <form action="{{ route('toggle-verification', $artist->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <button type="submit" class="btn btn-primary btn-sm">
+            {{ $artist->verified ? 'Verify' : 'Verified' }}
+        </button>
+    </form>
+</td>
+
+
+                                @if($artist->trashed())
+                                    <td>
+                                        <form action="{{ route('restore-artists', $artist->id) }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                            <button type="submit" class="btn btn-info btn-sm"> restore </button>
+                                        </form>
+                                    </td>
+                                    @else
+                                    <td>
+                                        <a href="{{  route('artists.edit', $artist->id) }}" class="btn btn-info btn-sm"> Edit </a>
+                                    </td>
+
+
+                                    @endif
+                                    <td>
                                     <form action="{{ route('artists.destroy', $artist->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            {{ $artist->trashed() ? 'Delete' : 'Trash' }}
+                                        </button>
                                     </form>
-                                </td>
+                                    </td>
                             </tr>
                         @endforeach
                     </tbody>

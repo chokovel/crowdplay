@@ -25,17 +25,17 @@
         @foreach ($posts as $post)
             <tr>
                 <td>
-                    <img src=" {{ asset($post->image) }}" alt=" {{$post->title}} " style="width:75px">
+                    <img src=" {{ asset(str_replace('public','storage',$post->image)) }}" alt=" {{$post->title}} " style="width:75px; height:75px; object-fit:cover;">
                 </td>
                 <td>
                     {{ $post->title }}
                 </td>
                 <td>
-                    <a href="{{ route('categories.edit', $post->category->id) }}"> 
+                    <a href="{{ route('categories.edit', $post->category->id) }}">
                         {{ $post->category->name }}
                     </a>
                 </td>
-                @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)        
+                @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                 @if($post->trashed())
                 <td>
                     <form action="{{ route('restore-posts', $post->slug) }}" method="post">
@@ -55,15 +55,15 @@
                 <form action="{{ route('posts.destroy', $post->slug) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm"> 
+                    <button type="submit" class="btn btn-danger btn-sm">
                         {{ $post->trashed() ? 'Delete' : 'Trash' }}
                     </button>
                 </form>
                 </td>
-            @endif      
+            @endif
             </tr>
         @endforeach
-        
+
     </tbody>
 </table>
 @else

@@ -24,7 +24,7 @@
         @foreach ($albums as $album)
             <tr>
                 <td>
-                    <img src=" {{ asset(str_replace('public', 'storage', $album->cover_image)) }}" alt=" {{$album->name}} " style="width:75px">
+                    <img src=" {{ asset(str_replace('public', 'storage', $album->cover_image)) }}" alt=" {{$album->name}} " style="width:75px; height:75px; object-fit:cover;">
                 </td>
 
                 <td>

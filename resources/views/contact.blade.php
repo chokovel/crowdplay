@@ -203,12 +203,13 @@
          <!-- contact area start -->
             <div class="tp-contact-area pt-80 pb-80">
                <div class="container">
-                 @if(session('success'))
+                  <div class="row">
+
+                    @if(session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
-                  <div class="row">
                      <div class="col-lg-4">
                         <div class="tp-contact-phone d-sm-flex justify-content-xl-end">
                            <div class="tp-contact-icon">
@@ -262,7 +263,7 @@
                      </div>
                         <div class="tp-contact-from p-relative" data-background="assets/img/breadcrumb/img-2.jpg">
                             <div class="tp-brands-from-overlay"></div>
-                            <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @if(session('success'))
                                 <div class="alert alert-success">

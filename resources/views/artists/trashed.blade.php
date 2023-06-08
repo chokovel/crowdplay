@@ -27,8 +27,22 @@
                             <td>
                                 {{ $artist->stagename }}
                             </td>
-                            <td>
-                                <a href="{{ route('artists.edit', $artist->id) }}" class="btn btn-info btn-sm">Edit</a>
+                                <td>
+                                    <button><a href="{{ route('artists.edit', $artist->slug) }}" class="btn btn-info btn-sm"> Edit </a><button>
+                                </td>
+                                <td>
+                                <form action="{{ route('artists.destroy'. $artist->slug) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-warning btn-sm"> Trash </button>
+                                </form>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" onclick="handleDelete( {{$artist->slug}} )"> Delete </button>
+                                </td>
+
+                            {{-- <td>
+                                <a href="{{ route('pending-artists.index', $artist->id) }}" class="btn btn-info btn-sm">Edit</a>
                             </td>
                             <td>
                                 <form action="{{ route('artists.destroy', $artist->id) }}" method="POST">
@@ -39,7 +53,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-danger btn-sm" onclick="handleDelete('{{ $artist->id }}')">Delete</button>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>

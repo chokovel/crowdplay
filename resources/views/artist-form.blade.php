@@ -202,7 +202,7 @@
                     </span>
                     <h3 class="tp-section__title">Artist Details</h3>
                     </div>
-                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/form-input.png">
+                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/form-img1.jpg">
                         <div class="tp-brands-from-overlay"></div>
                         <form id="contact-form" action="{{ isset($artist) ? route('artists.update', $artist->id) : route('artists.store') }}" method="POST" enctype="multipart/form-data">
 
