@@ -40,126 +40,132 @@
 
     <!-- header area start -->
         <header class="tp-header-area p-relative tp-header-height">
-
-        <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
-            <div class="tp-header-color"></div>
-            <div class="tp-header-space p-relative z-index-1">
-                <div class="tp-header-shape d-none d-xl-block">
-                    <img class="shape-1" src="assets/img/testimonial/shpe-1.png" alt="">
-                    <img class="shape-2" src="assets/img/testimonial/shpe-2.png" alt="">
-                </div>
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                    <div class="col-6 col-lg-6 col-xl-2">
-                        <div class="tp-header-logo tp-header-logo-border">
-                            <a href="{{'/'}}">
-                                <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
-                            </a>
+            <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
+               <div class="tp-header-color"></div>
+               <div class="tp-header-space p-relative z-index-1">
+                  <div class="tp-header-shape d-none d-xl-block">
+                     <img class="shape-1" src="assets/img/testimonial/shpe-1.png" alt="">
+                     <img class="shape-2" src="assets/img/testimonial/shpe-2.png" alt="">
+                  </div>
+                  <div class="container-fluid">
+                     <div class="row align-items-center">
+                        <div class="col-6 col-lg-6 col-xl-2">
+                           <div class="tp-header-logo tp-header-logo-border">
+                              <a href="{{'/'}}">
+                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                              </a>
+                           </div>
                         </div>
-                    </div>
-                    <div class="col-xl-7 d-none d-xl-block">
-                        <div class="tp-main-menu-area d-flex align-items-center pl-20">
-                            <div class="tp-main-menu pl-45">
-                                <nav id="tp-mobile-menu">
-                                <ul>
-                                    <li>
-                                        <a href="{{'/'}}">Home</a>
-                                    </li>
-                                    <!-- <li> <a href="{{'/'}}">About</a> </li> -->
-                                    <li> <a href="{{'/service'}}">Services</a> </li>
-                                    <li> <a href="{{'/artists'}}">Artists</a> </li>
-                                    <li> <a href="{{'/blog'}}">Blog</a> </li>
-                                    <li> <a href="{{'/contact'}}">Contact</a></li>
-                                        @if (Route::has('login'))
-                                    <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
-                                        @auth
-                                        <li>
-                                            <a href="{{ url('/dashboard') }}">Dashboard</a>
-                                        </li>
+                        <div class="col-xl-7 d-none d-xl-block">
+                           <div class="tp-main-menu-area d-flex align-items-center pl-20">
+                              <div class="tp-main-menu pl-45">
+                                 <nav id="tp-mobile-menu">
+                                    <ul>
+                                       <li>
+                                          <a href="{{'/'}}">Home</a>
+                                       </li>
+                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       <li> <a href="{{'/service'}}">Services</a> </li>
+                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
+                                       <li> <a href="{{'/blog'}}">Blog</a> </li>
+                                       <li> <a href="{{'/contact'}}">Contact</a></li>
+                                         {{-- @if (Route::has('login'))
+                                       <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
+                                          @auth
+                                          <li>
+                                                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                                          </li>
 
-                                        @else
-                                        <li>
-                                            <a href="{{ route('login') }}">Log in</a>
-                                        </li>
+                                          @else
+                                          <li>
+                                             <a href="{{ route('login') }}">Log in</a>
+                                          </li>
 
-                                            @if (Route::has('register'))
-                                            <li>
-                                                <a href="{{ route('register') }}">Register</a>
-                                            </li>
-                                            @endif
-                                        @endauth
-                                    <!-- </li> -->
-                                        @endif
-                                </ul>
-                                </nav>
-                            </div>
+                                                @if (Route::has('register'))
+                                                <li>
+                                                   <a href="{{ route('register') }}">Register</a>
+                                                </li>
+                                                @endif
+                                          @endauth
+                                       <!-- </li> -->
+                                           @endif --}}
+                                    </ul>
+                                 </nav>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-lg-6 col-xl-3">
-                        <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
+                        <div class="col-6 col-lg-6 col-xl-3">
+                           <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
+                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
+                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
+                                    <span>
+                                       02
+                                    </span>
+                                 </a>
+                                 </div> -->
+                                 <div class="tp-header-btn p-relative d-none d-xl-block">
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                 </div>
+                                 <div class="mobile-menu d-block d-xl-none text-end">
+                                    <button class="tp-side-action tp-toogle hamburger-btn">
+                                       <span></span>
+                                       <span></span>
+                                       <span></span>
+                                    </button>
+                                 </div>
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+      <!-- header area end -->
 
-                                <div class="tp-header-btn p-relative d-none d-xl-block">
-                                <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
-                                </div>
-                                <div class="mobile-menu d-block d-xl-none text-end">
-                                <button class="tp-side-action tp-toogle hamburger-btn">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </button>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-                </div>
+      <!-- mobile menu style start -->
+         <div class="tp-offcanvas-area fix">
+         <div class="tp-side-info">
+            <div class="tp-side-logo">
+               <a href="{{'/'}}">
+                  <img style="width:80px" src="assets/img/logo/logo.png" alt="logo">
+               </a>
             </div>
-        </div>
-        </header>
-    <!-- header area end -->
-
-    <!-- mobile menu style start -->
-        <div class="tp-offcanvas-area fix">
-        <div class="tp-side-info">
-        <div class="tp-side-logo">
-            <a href="{{'/'}}">
-                <img style="width:80px" src="assets/img/logo/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="tp-side-close">
-            <button> <i class="fa-thin fa-xmark"></i></button>
-        </div>
-        <div class="tp-mobile-menu-pos"></div>
-        <div class="tp-side-content p-relative">
-            <div class="tp-sidebar__contact">
-                <h4 class="tp-sidebar-title">Contact Info</h4>
-                <ul>
-                    <li class="d-flex align-items-center">
-                    <div class="tp-sidebar__contact-text">
-                        <a target="_blank" href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza, By phase3 Gate, Army Post Service Housing Estate, Kurudu, Abuja</a>
-                    </div>
-                    </li>
-                    <li class="d-flex align-items-center">
-                    <div class="tp-sidebar__contact-text">
-                        <a href="telto:08081055103"><i class="far fa-phone"></i> 0808 105 5103</a>
-                    </div>
-                    </li>
-                    <li class="d-flex align-items-center">
-                    <div class="tp-sidebar__contact-text">
-                        <a href="mailto:crowdplayabuja@gmail.com"><i class="fal fa-envelope"></i> crowdplayabuja@gmail.com</a>
-                    </div>
-                    </li>
-                </ul>
+            <div class="tp-side-close">
+               <button> <i class="fa-thin fa-xmark"></i></button>
             </div>
-            <div class="tp-sidebar-icons tp-btn-effect-blue">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <div class="tp-mobile-menu-pos"></div>
+            <div class="tp-side-content p-relative">
+               <div class="tp-sidebar__contact">
+                  <h4 class="tp-sidebar-title">Contact Info</h4>
+                  <ul>
+                     <li class="d-flex align-items-center">
+                        <div class="tp-sidebar__contact-text">
+                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                        </div>
+                     </li>
+                     <li class="d-flex align-items-center">
+                        <div class="tp-sidebar__contact-text">
+                           <a href="telto:08081055103"><i class="far fa-phone"></i> 0808 105 5103</a>
+                        </div>
+                     </li>
+                     <li class="d-flex align-items-center">
+                        <div class="tp-sidebar__contact-text">
+                           <a href="mailto:crowdplayabuja@gmail.com"><i class="fal fa-envelope"></i> crowdplayabuja@gmail.com</a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="tp-sidebar-icons tp-btn-effect-blue">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+               </div>
             </div>
-        </div>
-        </div>
-        <div class="offcanvas-overlay"></div>
-        </div>
-    <!-- mobile menu style end -->
+         </div>
+         <div class="offcanvas-overlay"></div>
+         </div>
+      <!-- mobile menu style end -->
 
 <main>
         <!-- about breadcrumb area start -->
@@ -202,64 +208,85 @@
                     </span>
                     <h3 class="tp-section__title">Artist Details</h3>
                     </div>
-                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/form-img1.jpg">
+                    <div class="tp-contact-from p-relative" data-background="assets/img/brand/home-2/team-1.jpg">
                         <div class="tp-brands-from-overlay"></div>
-                        <form id="contact-form" action="{{ isset($artist) ? route('artists.update', $artist->id) : route('artists.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('artists.form') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-                                @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
 
-                                @if(isset($artist))
-                                    @method('PUT')
-                                @endif
-                                <div class="row tp-gx-20">
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="firstname" type="text" placeholder="First Name:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="stagename" type="text" placeholder="Stage Name:">
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <input type="text" id="firstname" name="firstname" class="form-control" required>
+                                    <label for="firstname">First Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="lastname" type="text" placeholder="Last Name:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="phone" type="number" placeholder="Phone:" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="lastname" name="lastname" class="form-control" required>
+                                    <label for="lastname">Last Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="email" type="email" placeholder="Email:" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="address" type="text" placeholder="Address:" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="stagename" name="stagename" class="form-control">
+                                    <label for="stagename">Stage Name</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="artprofession" type="text" placeholder="Art Profession: e.g Musician" required>
-                                    </div>
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input name="portfoliolink" type="text" placeholder="Portfolio Link e.g https://" required>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="phone" name="phone" class="form-control" required>
+                                    <label for="phone">Phone</label>
                                 </div>
-                                <div class="col-12">
-                                    <div class="tp-brands-from-input contact-mb">
-                                        <input class="pt-3" type="file" name="image" placeholder="Image">
-                                    </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <label for="email">Email</label>
                                 </div>
-                                <div class="col-12">
-                                    <div class="tp-brands-from-input contact-textarea">
-                                    <textarea name="bio" placeholder="Brief professional biography..." required></textarea>
-                                    </div>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="address" name="address" class="form-control" required>
+                                    <label for="address">Address</label>
                                 </div>
-                                <p class="ajax-response"></p>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="artprofession" name="artprofession" class="form-control" required>
+                                    <label for="artprofession">Art Profession (e.g., Musician)</label>
                                 </div>
-                                <div class="tp-contact-submit text-center mt-20">
-                                <button class="tp-btn" type="submit">Send<i class="fa-regular fa-arrow-right-long"></i></button>
+                                <div class="md-form mb-3">
+                                    <input type="text" id="portfoliolink" name="portfoliolink" class="form-control" required>
+                                    <label for="portfoliolink">Portfolio Link (e.g., https://)</label>
                                 </div>
-                            </form>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="md-form mb-3">
+                                    <input type="file" id="image" name="image" class="form-control-file">
+                                    <label for="image">Image</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="md-form mb-3">
+                                    <textarea id="bio" name="bio" class="form-control md-textarea" rows="4" required></textarea>
+                                    <label for="bio">Brief Professional Biography</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary" type="submit">Send <i class="fas fa-arrow-right ml-1"></i></button>
+                        </div>
+                    </form>
+
                         </div>
                     </div>
                     </div>

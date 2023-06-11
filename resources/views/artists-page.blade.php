@@ -56,42 +56,9 @@
             </button>
          </div>
       <!-- back to top end -->
-      
+
       <!-- header area start -->
-         <header class="tp-header-area p-relative tp-header-height">
-            <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
-               <div class="container-fluid">
-                  <div class="row align-items-center">
-                     <div class="col-lg-8">
-                        <div class="tp-header-top-info">
-                           <ul>
-                              <li>
-                                 <a href="tel:008757845682"><span><i class="flaticon-telephone-call"></i></span>(00) 875 784 5682</a>
-                              </li>
-                              <li>
-                                 <a href="mailto:Kleasoinfo@gmail.com"><span><i class="flaticon-mail"></i></span>cleasoinfo@gmail.com</a>
-                              </li>
-                              <li>
-                                 <a href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423" target="_blank">
-                                 <span><i class="flaticon-location"></i></span>
-                                 238, Arimantab, Moska  - USA.
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="tp-header-top-social text-lg-end text-xl-center text-xxl-end">
-                           <span>Follow Us:</span>
-                           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                           <a href="#"><i class="fa-brands fa-skype"></i></a>
-                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
+        <header class="tp-header-area p-relative tp-header-height">
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -119,15 +86,16 @@
                                        <!-- <li> <a href="{{'/'}}">About</a> </li> -->
                                        <li> <a href="{{'/service'}}">Services</a> </li>
                                        <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         @if (Route::has('login'))
+                                         {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
                                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
                                           </li>
-                                                
+
                                           @else
                                           <li>
                                              <a href="{{ route('login') }}">Log in</a>
@@ -140,7 +108,7 @@
                                                 @endif
                                           @endauth
                                        <!-- </li> -->
-                                           @endif
+                                           @endif --}}
                                     </ul>
                                  </nav>
                               </div>
@@ -156,7 +124,7 @@
                                  </a>
                                  </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/artist-form'}}"><i class="fa-light fa-calendar-days"></i> Book an Artist</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -192,7 +160,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -216,6 +184,7 @@
          </div>
          <div class="offcanvas-overlay"></div>
          </div>
+      <!-- mobile menu style end -->
       <!-- mobile menu style end -->
 
              <main>
@@ -251,73 +220,22 @@
             <section class="tp-team-3-area pt-120 pb-120 p-relative">
                <div class="container">
                   <div class="row">
+                    @foreach($artists as $artist)
+                    @if ($artist->verified !== false)
                      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
                         <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
+                           <a href="team-details.html"><img src="{{asset('storage/'.$artist->image)}}" alt=""></a>
                            <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">Timeless Dj Malish</a></h4>
-                              <span>Dick Jockey</span><br/>
+                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">{{ $artist->firstname }} {{ $artist->lastname }}</a></h4>
+                              <span>{{ $artist->artprofession }}</span><br/>
                               <button class=" btn btn-sm btn-primary">
-                                 <a href="{{'/artist-form'}}">Book Now</a>
+                                 <a href="{{'/contact'}}" target="_blank">Book Now</a>
                               </button>
                            </div>
                         </div>
                      </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="team-details.html">Bakie</a></h4>
-                              <span>Singer & Pianist</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="team-details.html">IAmKlassique</a></h4>
-                              <span>Photographer</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">DJ Ice</a></h4>
-                              <span>Producer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="tp-service-all-btn text-center mt-30">
-                           <a class="tp-btn" href="{{'/artist-form'}}">Become an Artist <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div>
-                     </div>
-                  </div>
+                    @endif
+                    @endforeach
                </div>
             </section>
       <!-- team area end -->
@@ -420,7 +338,7 @@
                               </ul> -->
                            </div>
                         </div>
-                        
+
                         <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
                            <div class="tp-footer-widget-3 tp-footer-ml-45 mb-30">
                               <span class="mb-30">Our Services</span>
@@ -442,7 +360,7 @@
                <div class="container">
                   <div class="row align-items-center justify-content-center">
                      <div class="col-lg-12">
-                        <p class="text-center">Copyright © 
+                        <p class="text-center">Copyright ©
                             <script>document.write(new Date().getFullYear())</script> CrowdPlay. All Rights Reserved</p>
                      </div>
                   </div>

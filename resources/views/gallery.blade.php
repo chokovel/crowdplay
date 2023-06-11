@@ -64,39 +64,6 @@
 
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
-            <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
-               <div class="container-fluid">
-                  <div class="row align-items-center">
-                     <div class="col-lg-8">
-                        <div class="tp-header-top-info">
-                           <ul>
-                              <li>
-                                 <a href="tel:008757845682"><span><i class="flaticon-telephone-call"></i></span>(00) 875 784 5682</a>
-                              </li>
-                              <li>
-                                 <a href="mailto:Kleasoinfo@gmail.com"><span><i class="flaticon-mail"></i></span>cleasoinfo@gmail.com</a>
-                              </li>
-                              <li>
-                                 <a href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423" target="_blank">
-                                 <span><i class="flaticon-location"></i></span>
-                                 238, Arimantab, Moska  - USA.
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="tp-header-top-social text-lg-end text-xl-center text-xxl-end">
-                           <span>Follow Us:</span>
-                           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                           <a href="#"><i class="fa-brands fa-skype"></i></a>
-                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -124,9 +91,10 @@
                                        <!-- <li> <a href="{{'/'}}">About</a> </li> -->
                                        <li> <a href="{{'/service'}}">Services</a> </li>
                                        <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         @if (Route::has('login'))
+                                         {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -145,7 +113,7 @@
                                                 @endif
                                           @endauth
                                        <!-- </li> -->
-                                           @endif
+                                           @endif --}}
                                     </ul>
                                  </nav>
                               </div>
@@ -197,7 +165,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -239,11 +207,11 @@
                <div class="row justify-content-center">
                   <div class="col-xl-10">
                      <div class="breadcrumb__content text-center">
-                        <h3 class="breadcrumb__title">Gallery</h3>
+                        <h3 class="breadcrumb__title">Portfolio</h3>
                         <div class="breadcrumb__list breadcrumb__list-translate">
                            <span><a href="{{'/'}}">Home</a></span>
                            <span class="dvdr"><i class="fa-sharp fa-regular fa-minus"></i></span>
-                           <span>GALLERY</span>
+                           <span>Portfolio</span>
                         </div>
                      </div>
                   </div>
@@ -252,12 +220,12 @@
          </section>
          <!-- about breadcrumb area end -->
 
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         @foreach($albums as $album)
         <div class="col-md-4 col-sm-6 mb-4 mt-4">
             <div class="card">
-                <img src="{{ asset(str_replace('public', 'storage', $album->cover_image)) }}" class="card-img-top" alt="{{ $album->name }}">
+                <img src="{{ asset(str_replace('public', 'storage', $album->cover_image)) }}" class="card-img-top" alt="{{ $album->name }}" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $album->name }}</h5>
                     <p class="card-text">{{ $album->description }}</p>
@@ -268,6 +236,7 @@
         @endforeach
     </div>
 </div>
+
 
 
 

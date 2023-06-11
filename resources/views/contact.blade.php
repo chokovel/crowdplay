@@ -67,9 +67,10 @@
                                        <!-- <li> <a href="{{'/'}}">About</a> </li> -->
                                        <li> <a href="{{'/service'}}">Services</a> </li>
                                        <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         @if (Route::has('login'))
+                                         {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -88,7 +89,7 @@
                                                 @endif
                                           @endauth
                                        <!-- </li> -->
-                                           @endif
+                                           @endif --}}
                                     </ul>
                                  </nav>
                               </div>
@@ -104,7 +105,7 @@
                                  </a>
                                  </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/artist-form'}}"><i class="fa-light fa-calendar-days"></i> Book an Artist</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -135,17 +136,12 @@
             </div>
             <div class="tp-mobile-menu-pos"></div>
             <div class="tp-side-content p-relative">
-                 @if(session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
                <div class="tp-sidebar__contact">
                   <h4 class="tp-sidebar-title">Contact Info</h4>
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -360,7 +356,7 @@
                </div>
             <div class="tp-footer-inner-content tp-footer-plr">
                <div class="container-fluid">
-                  <div class="tp-footer-logo-area pt-80 pb-55">
+                  <div class="tp-footer-logo-area pt-100 pb-75">
                   <div class="tp-footer-logo-content p-relative">
                      <div class="tp-footer-logo-content-shape d-none d-xl-block">
                         <img class="shape-3" src="assets/img/footer/shape-3.png" alt="">
@@ -388,7 +384,7 @@
                   </div>
                   </div>
                </div>
-               <div class="tp-footer-widget-area pb-40">
+               <div class="tp-footer-widget-area pb-60">
                   <div class="container-fluid">
                      <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 col-xl-4">
@@ -396,9 +392,10 @@
                               <span class="mb-30 ">Quick Links</span>
                               <ul class="tp-footer-list-float">
                                  <li><a href="{{'/'}}">Home</a></li>
-                                 <!-- <li><a href="{{'/about'}}">About</a></li> -->
+                                 <li><a href="{{'#about'}}">About</a></li>
                                  <li><a href="{{'/service'}}">Services</a></li>
                                  <li><a href="{{'/artists'}}">Artists</a></li>
+                                 <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                  <li><a href="{{'/blog'}}">Blog</a></li>
                                  <li><a href="{{'/contact'}}">Contact</a></li>
                               </ul>
@@ -421,7 +418,7 @@
                                     <a style="font-size: 16px" href="mailto:crowdplayabuja@gmail.com">crowdplayabuja@gmail.com</a>
                                  </div>
                               </div>
-                               <div class="tp-footer-widget-contact d-flex align-items-center">
+                              <div class="tp-footer-widget-contact d-flex align-items-center">
                                  <a class="icon" href="#"><i class="flaticon-house"></i></a>
                                  <div class="contact-inner">
                                     <p>Address:</p>

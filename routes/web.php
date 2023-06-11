@@ -52,6 +52,8 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 Route::get('/gallery', [WelcomeController::class, 'gallery'])->name('gallery.index');
 Route::get('/photos/{album}', [WelcomeController::class, 'photos'])->name('albums.photos');
 
+Route::get('/artists-page', [WelcomeController::class, 'artist'])->name('artist-page');
+Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
 
 
 Route::get('/dashboard', function () {
@@ -80,7 +82,6 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('albums', App\Http\Controllers\AlbumsController::class);
 
     Route::resource('artists', App\Http\Controllers\ArtistController::class);
-    Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
     Route::put('toggle-verification/{id}', [App\Http\Controllers\ArtistController::class, 'toggleVerification'])
     ->name('toggle-verification');
 

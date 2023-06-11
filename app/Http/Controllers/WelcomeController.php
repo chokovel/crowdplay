@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Event;
+use App\Models\Artist;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Session;
 
@@ -21,6 +22,12 @@ class WelcomeController extends Controller
         ->with('tags', Tag::all())
         ->with('recents', Post::orderBy('updated_at', 'DESC')->limit(3)->get())
         ->with('events', Event::orderBy('updated_at', 'DESC')->limit(2)->get());
+    }
+
+    public function artist()
+    {
+        $artists = Artist::all();
+        return view('artists-page', compact('artists'));
     }
 
     // AlbumController.php

@@ -37,15 +37,6 @@
                                 <td>
                                     {{ $artist->artprofession }}
                                 </td>
-                                <td>
-    <form action="{{ route('toggle-verification', $artist->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <button type="submit" class="btn btn-primary btn-sm">
-            {{ $artist->verified ? 'Verify' : 'Verified' }}
-        </button>
-    </form>
-</td>
 
 
                                 @if($artist->trashed())
@@ -57,6 +48,17 @@
                                         </form>
                                     </td>
                                     @else
+
+                                    <td>
+                                        <form action="{{ route('toggle-verification', $artist->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                {{ $artist->verified ? 'Verified' : 'Verify' }}
+                                            </button>
+                                        </form>
+                                    </td>
+
                                     <td>
                                         <a href="{{  route('artists.edit', $artist->id) }}" class="btn btn-info btn-sm"> Edit </a>
                                     </td>

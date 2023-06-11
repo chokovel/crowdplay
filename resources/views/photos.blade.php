@@ -28,6 +28,9 @@
       <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
 ">
+<!-- Include Lightbox2 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
 
    </head>
 
@@ -64,39 +67,6 @@
 
       <!-- header area start -->
          <header class="tp-header-area p-relative tp-header-height">
-            <!-- <div class="tp-header-top tp-header-space d-none d-lg-block">
-               <div class="container-fluid">
-                  <div class="row align-items-center">
-                     <div class="col-lg-8">
-                        <div class="tp-header-top-info">
-                           <ul>
-                              <li>
-                                 <a href="tel:008757845682"><span><i class="flaticon-telephone-call"></i></span>(00) 875 784 5682</a>
-                              </li>
-                              <li>
-                                 <a href="mailto:Kleasoinfo@gmail.com"><span><i class="flaticon-mail"></i></span>cleasoinfo@gmail.com</a>
-                              </li>
-                              <li>
-                                 <a href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423" target="_blank">
-                                 <span><i class="flaticon-location"></i></span>
-                                 238, Arimantab, Moska  - USA.
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="tp-header-top-social text-lg-end text-xl-center text-xxl-end">
-                           <span>Follow Us:</span>
-                           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                           <a href="#"><i class="fa-brands fa-skype"></i></a>
-                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -124,9 +94,10 @@
                                        <!-- <li> <a href="{{'/'}}">About</a> </li> -->
                                        <li> <a href="{{'/service'}}">Services</a> </li>
                                        <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         @if (Route::has('login'))
+                                         {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -145,7 +116,7 @@
                                                 @endif
                                           @endauth
                                        <!-- </li> -->
-                                           @endif
+                                           @endif --}}
                                     </ul>
                                  </nav>
                               </div>
@@ -197,7 +168,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="https://www.google.com/maps/place/Maricopa,+AZ,+USA/@33.0435146,-112.0317544,13z/data=!3m1!4b1!4m5!3m4!1s0x872ae52ea99557e3:0x702c0500cea3bb0!8m2!3d33.0581063!4d-112.0476423"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -250,27 +221,31 @@
                </div>
             </div>
          </section>
-         <!-- about breadcrumb area end -->
+                <!-- about breadcrumb area end -->
 
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-md-12 mt-4">
-            <h1>{{ $album->name }}</h1>
-            <p>{{ $album->description }}</p>
-        </div>
-    </div>
-    <div class="row">
-        @foreach($album->photos as $photo)
-        <div class="col-md-4 col-sm-6 mb-4 mt-3">
-            <img style="width:250px; height:330px; object-fit:cover;" src="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" class="card-img-top" alt="{{ $photo->title }}">
-            <div class="mt-2">
-                <h6 class="card-title">{{ $photo->title }}</h6>
-                <p class="card-text">{{ $photo->description }}</p>
+       <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-12 mt-4">
+                    <h1>{{ $album->name }}</h1>
+                    <p>{{ $album->description }}</p>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($album->photos as $photo)
+                <div class="col-md-3 col-sm-6 mb-4 mt-3">
+                    <a href="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" data-lightbox="album" data-title="{{ $photo->title }}">
+                        <img style="width:100%; height:200px; object-fit:cover;" src="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" class="card-img-top" alt="{{ $photo->title }}">
+                    </a>
+                    <div class="mt-2">
+                        <h6 class="card-title">{{ $photo->title }}</h6>
+                        <p class="card-text">{{ $photo->description }}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
-        @endforeach
-    </div>
-</div>
+
+
 
 
 
@@ -320,7 +295,41 @@
       <script src="{{ asset('js/bootstrap.min.js') }}"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
 "></script>
+    <!-- Include Lightbox2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': true,
+            'alwaysShowNavOnTouchDevices': true,
+            'disableScrolling': true,
+            'fadeDuration': 300,
+            'imageFadeDuration': 300,
+            'wrapAround': true,
+            'positionFromTop': 50,
+            'disableScrolling': true,
+            'fitImagesInViewport': true,
+            'maxWidth': 800,
+            'maxHeight': 600,
+            'showImageNumberLabel': true,
+            'albumLabel': "Image %1 of %2",
+            'disableKeyboardNav': false,
+            'showCloseButton': true,
+            'showNextButton': true,
+            'showPrevButton': true,
+            'disableScrolling': false,
+            'wrapAround': true,
+            'alwaysShowNavOnTouchDevices': true,
+            'resizeDuration': 200,
+            'fadeDuration': 300,
+            'imageFadeDuration': 300,
+            'positionFromTop': 50,
+            'wrapAround': true,
+            'fitImagesInViewport': true
+        });
+    </script>
    </body>
 </html>
 
