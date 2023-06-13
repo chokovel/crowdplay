@@ -27,26 +27,6 @@
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -83,13 +63,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -116,15 +96,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -147,7 +120,7 @@
          <div class="tp-side-info">
             <div class="tp-side-logo">
                <a href="{{'/'}}">
-                  <img style="width:80px" src="assets/img/logo/logo.png" alt="logo">
+                  <img style="width:80px" src="assets/img/logo/logo.png{{asset('assets/img/logo/logo.png')}}" alt="logo">
                </a>
             </div>
             <div class="tp-side-close">
@@ -160,7 +133,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -186,109 +159,95 @@
          </div>
       <!-- mobile menu style end -->
 
-             <main>
+           <main>
          <!-- about breadcrumb area start -->
-         <section class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/img-2.jpg">
-            <div class="breadcrumb__bg-overlay m-img"></div>
-            <div class="breadcrumb-shape d-none d-lg-block">
-               <div class="shape-1">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape.png" alt="">
-               </div>
-               <div class="shape-2">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape-2.png" alt="">
-               </div>
+        <!-- service details area start -->
+<section class="tp-blog-breadcrumb-area pt-120 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="tp-blog-right-box">
+                    <!-- Loop through the blog posts -->
+                    <div class="tp-blog-content-wrapper mb-60">
+                        <div class="tp-blog-breadcrumb-thumb p-relative">
+                            <a href="#"><img src="{{ asset(str_replace('public','storage',$post->image)) }}" alt=""></a>
+                            <span class="tp-section__title-pre">{{ $post->created_at->format('d-M-Y') }}</span>
+                        </div>
+                        <div class="tp-blog-breadcrumb-inner-content">
+                            <h3 class="tp-blog-title"><a href="#">{{ $post->title }}</a></h3>
+                            <p>{!! $post->content !!}</p>
+                        </div>
+                    </div>
+                    <div class="tp-blog-breadcrumb-pagination mb-40">
+                        <nav class="blog-pagination" aria-label="...">
+                            <ul class="pagination">
+                                <!-- Pagination links go here -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-xl-10">
-                     <div class="breadcrumb__content text-center">
-                        <h3 class="breadcrumb__title">Our Professional Artists</h3>
-                        <div class="breadcrumb__list breadcrumb__list-translate">
-                           <span><a href="{{'/'}}">Home</a></span>
-                           <span class="dvdr"><i class="fa-sharp fa-regular fa-minus"></i></span>
-                           <span>Artists</span>
+            <div class="col-lg-4">
+                <div class="tp-blog-left-box">
+                    <div class="tp-service-details__search-box mb-60">
+                        <h3 class="tp-blog-sidebar__widget-title">Search Here</h3>
+                        <div class="search-form p-relative">
+                            <form action="#">
+                                <input type="text" placeholder="Search here">
+                                <button><i class="fa-regular fa-arrow-right-long"></i></button>
+                            </form>
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                    <div class="service-sidebar__widget mb-60">
+                        <h3 class="service-sidebar__widget-title">Post Categories</h3>
+                        <div class="service-sidebar__widget-content">
+                            <ul>
+                                <!-- Loop through the post categories -->
+                                @foreach($categories as $category)
+                                <li><a href="{{route('category', $category->name)}}"><i class="fa-regular fa-arrow-right"></i> {{ $category->name }}<span></span></a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tp-blog-sidebar__widget mb-60">
+                        <h3 class="tp-blog-sidebar__widget-title">Recent Post</h3>
+                        <div class="tp-blog-sidebar__widget-content">
+                            <!-- Loop through the recent posts -->
+                            @foreach($recents as $recent)
+                            <div class="tp-blog-sidebar__post">
+                                <div class="rc__post d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                        <a href="{{ route('post', $post->slug)}}"><img src="{{ asset(str_replace('public','storage',$post->image)) }}" alt="{{ $recent->title }}" style="width: 75px;"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                        <h3 class="rc__post-title">
+                                            <a href="{{ route('post', $post->slug)}}">{{ $recent->title }}</a>
+                                        </h3>
+                                        <span><i class="fa-light fa-calendar-days"></i> {{ $recent->created_at->format('d-m-Y') }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="tp-blog-sidebar__widget mb-30">
+                        <h3 class="tp-blog-sidebar__widget-title">Popular Tag</h3>
+                        <div class="tp-blog-sidbar__widget-content">
+                            <div class="side__tagcloud">
+                                <!-- Loop through the tags -->
+                                @foreach($tags as $tag)
+                                <a href="{{route('tag', $tag->name)}}">{{ $tag->name }}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </section>
-         <!-- about breadcrumb area end -->
-
-         <!-- team area start -->
-            <section class="tp-team-3-area pt-120 pb-120 p-relative">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">Timeless Dj Malish</a></h4>
-                              <span>Dick Jockey</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="team-details.html">Bakie</a></h4>
-                              <span>Singer & Pianist</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="team-details.html">IAmKlassique</a></h4>
-                              <span>Photographer</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="assets/img/team/home-2/team-1.jpg" alt=""></a>
-                           <!-- <div class="tp-team-2-social d-flex justify-content-center tp-btn-effect">
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a class="tp-e-networks-link" href="#"><i class="fa-brands fa-skype"></i></a>
-                           </div> -->
-                           <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">DJ Ice</a></h4>
-                              <span>Producer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="tp-service-all-btn text-center mt-30">
-                           <a class="tp-btn" href="{{'/artist-form'}}">Become an Artist <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-      <!-- team area end -->
-
+        </div>
+    </div>
+</section>
+         <!-- service details area end -->
       </main>
-
 
 
 
@@ -338,7 +297,7 @@
                               <span class="mb-30 ">Quick Links</span>
                               <ul class="tp-footer-list-float">
                                  <li><a href="{{'/'}}">Home</a></li>
-                                 <li><a href="{{'#about'}}">About</a></li>
+                                 {{-- <li><a href="{{'#about'}}">About</a></li> --}}
                                  <li><a href="{{'/service'}}">Services</a></li>
                                  <li><a href="{{'/artists'}}">Artists</a></li>
                                  <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
@@ -417,6 +376,7 @@
             </div>
          </footer>
       <!-- footer area end -->
+
 
 
       <!-- JS here -->

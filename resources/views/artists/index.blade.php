@@ -59,10 +59,13 @@
                                         </form>
                                     </td>
 
+
+                                    <td>
+                                        <a href="{{  route('artists.show', $artist->id) }}" class="btn btn-info btn-sm"> View </a>
+                                    </td>
                                     <td>
                                         <a href="{{  route('artists.edit', $artist->id) }}" class="btn btn-info btn-sm"> Edit </a>
                                     </td>
-
 
                                     @endif
                                     <td>

@@ -27,26 +27,6 @@
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -71,7 +51,7 @@
                         <div class="col-6 col-lg-6 col-xl-2">
                            <div class="tp-header-logo tp-header-logo-border">
                               <a href="{{'/'}}">
-                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                                 <img style="width:60px" src="{{ asset('assets/img/logo/logo.png')}}" alt="crowdplay logo">
                               </a>
                            </div>
                         </div>
@@ -83,13 +63,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -116,15 +96,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -147,7 +120,7 @@
          <div class="tp-side-info">
             <div class="tp-side-logo">
                <a href="{{'/'}}">
-                  <img style="width:80px" src="assets/img/logo/logo.png" alt="logo">
+                  <img style="width:80px" src="{{asset('assets/img/logo/logo.png')}}" alt="logo">
                </a>
             </div>
             <div class="tp-side-close">
@@ -160,7 +133,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -185,378 +158,32 @@
          <div class="offcanvas-overlay"></div>
          </div>
       <!-- mobile menu style end -->
+      <!-- mobile menu style end -->
 
-            <main>
-         <!-- about breadcrumb area start -->
-         <section class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/breadcrumb-bg-2.jpg">
-            <div class="breadcrumb__bg-overlay m-img"></div>
-                  <div class="breadcrumb-shape d-none d-lg-block">
-               <div class="shape-1">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape.png" alt="">
-               </div>
-               <div class="shape-2">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape-2.png" alt="">
-               </div>
+    <main>
+      <section class="artist-details">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                        <div class="artist-details-header mb-4">
+                            <img style="width: 600px; " src="{{ asset('storage/'.$artist->image) }}" alt="{{ $artist->stagename }}" class="img-fluid">
+                        </div>
+                        <div class="artist-details-info">
+                            <h2 class="artist-details-name">Name: {{ $artist->firstname }} {{ $artist->lastname }}</h2>
+                            <h4 class="artist-details-name">Stage Name: "{{ $artist->stagename }}"</h4>
+                            <div class="artist-details-profession">
+                                <p>{{ $artist->artprofession }}</p>
+                            </div>
+                            <div class="artist-details-bio">
+                                <h4>About Me</h4>
+                                <p>{{ $artist->bio }}</p>
+                            </div>
+                        </div>
+                </div>
             </div>
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-xl-10">
-                     <div class="breadcrumb__content text-center">
-                        <h3 class="breadcrumb__title">ALL SERVICES</h3>
-                        <div class="breadcrumb__list breadcrumb__list-translate">
-                           <span><a href="{{'/'}}">Home</a></span>
-                           <span class="dvdr"><i class="fa-sharp fa-regular fa-minus"></i></span>
-                           <span>SERVICES</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- about breadcrumb area end -->
-
-         <!-- our service area start -->
-         <section class="tp-service-breadcrumb-area fix pt-120 pb-90 p-relative">
-            <div class="tp-service-breadcrumb-shape d-none d-lg-block">
-               <img class="shape-1" src="assets/img/services/service-details/bubble-1.png" alt="">
-               <img class="shape-2" src="assets/img/services/service-details/bubble-2.png" alt="">
-            </div>
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".3s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-1.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-house-cleaning"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service.detail.html">Audios</a></h4>
-                        <p>EXplore the finest top-quality audio producers in Nigeria.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".4s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-2.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-workplace"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Visuals</a></h4>
-                        <p>Crowdplay has the best recording studio for your next production.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".5s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-3.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-window-cleaning"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Photography</a></h4>
-                        <p>Hire the best photographers for a memorable event.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".6s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-4.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-mop"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Announcements</a></h4>
-                        <p>Public service announcement and all others.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".7s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-5.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-house-cleaning"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service.detail.html">Broadcasting</a></h4>
-                        <p>Gain visibility with our verified broadcasting services.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".8s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-6.jpg" alt="">
-                        </div>
-                        <!-- -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Interviews</a></h4>
-                        <p>Eliminate the hassle, let's connect you with the best interviewers.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".9s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-7.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-window-cleaning"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Presenters</a></h4>
-                        <p>Look no further, let's connect you with the top-notch presenters .</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6">
-                     <div class="tp-service-2-item p-relative mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay="1s">
-                        <div class="item-2-shape">
-                           <img src="assets/img/services/home-2/shape.png" alt="">
-                        </div>
-                        <div class="tp-service-2-thumb text-center">
-                           <img src="assets/img/services/home-2/img-8.jpg" alt="">
-                        </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-mop"></i>
-                        </div> -->
-                       <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Disc Jockey</a></h4>
-                        <p>Connect with award winning Disc Jockeys in no time and with ease.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- our service area end -->
-
-         <!-- fun fact area start -->
-            <section class="tp-counter-2-area p-relative">
-               <div class="container">
-                  <div class="tp-counter-2-wrapper p-relative">
-                     <div class="tp-counter-2-shape">
-                        <div class="shape-1 d-none d-lg-block">
-                           <img src="assets/img/counter/bubble-1.png" alt="">
-                        </div>
-                        <div class="shape-2 d-none d-lg-block">
-                           <img src="assets/img/counter/bubble-2.png" alt="">
-                        </div>
-                        <div class="shape-3 d-none d-lg-block">
-                           <img src="assets/img/counter/bubble-3.png" alt="">
-                        </div>
-                     </div>
-                     <div class="row wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".3s">
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                           <div class="tp-counter-2-inner p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-clean"></i>
-                              </div> -->
-                              <div class="tp-counter-content">
-                                 <h4 data-purecounter-duration="1" data-purecounter-end="25" class="purecounter tp-counter-title">0</h4>
-                                 <p>Happy Customers</p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                           <div class="tp-counter-2-inner-1 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-cleaning-lady"></i>
-                              </div> -->
-                              <div class="tp-counter-content">
-                                 <h4 data-purecounter-duration="1" data-purecounter-end="15" class="purecounter tp-counter-title">0</h4>
-                                 <p>Team Members</p>
-                              </div>
-                              <div class="tp-counter-2-shape-2">
-                                 <img src="assets/img/counter/shape-3.png" alt="">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                           <div class="tp-counter-2-inner-2 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-medal"></i>
-                              </div> -->
-                              <div class="tp-counter-content">
-                                 <h4 data-purecounter-duration="1" data-purecounter-end="2" class="purecounter tp-counter-title">0</h4>
-                                 <p>Award Winning</p>
-                              </div>
-                              <div class="tp-counter-2-shape-3 d-none d-lg-block">
-                                 <img src="assets/img/counter/shape-3.png" alt="">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                           <div class="tp-counter-2-inner-3 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-thumbs-up"></i>
-                              </div> -->
-                              <div class="tp-counter-content">
-                                 <h4 data-purecounter-duration="1.5" data-purecounter-end="35" class="purecounter tp-counter-title">0</h4>
-                                 <p>Projects Complete</p>
-                              </div>
-                              <div class="tp-counter-2-shape-4">
-                                 <img src="assets/img/counter/shape-3.png" alt="">
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-         <!-- fun fact area end -->
-
-         <!-- testimonial area start -->
-         <section class="tp-testimonial-3-area p-relative pt-120" data-background="assets/img/testimonial/home-3/img-1.jpg">
-            <div class="tp-testimonial-3-overlay"></div>
-            <div class="tp-testimonial-3-shape">
-               <img class="shape-1" src="assets/img/testimonial/home-3/bubble-1.png" alt="">
-               <img class="shape-2" src="assets/img/testimonial/home-3/bubble-2.png" alt="">
-            </div>
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-6">
-                     <div class="tp-testimonial-2-section-title-wrapper text-center">
-                        <div class="tp-inner-pre">
-                           <span><i class="far fa-users"></i></span>
-                        </div>
-                        <h3 class="tp-section__title mb-50">OUR LOVELY CUSTOMERS</h3>
-                     </div>
-                     <div class="testimonial-active-3 splide wow fadeInLeft" data-wow-duration="1s"
-                     data-wow-delay=".3s">
-                        <div class="splide__arrows splide__arrows--ltr tp-btn-effect">
-                           <button class="splide__arrow splide__arrow--prev">
-                           <i class="fa-light fa-arrow-left"></i>
-                         </button>
-                           <button class="splide__arrow splide__arrow--next">
-                            <i class="fa-light fa-arrow-right"></i>
-                         </button>
-                        </div>
-                        <div class="splide__track">
-                           <div class="splide__list">
-                              <div class="splide__slide">
-                                 <div class="tp-testimonial-2-wrapper">
-                                    <div class="tp-testimonial-2-shape">
-                                       <img src="assets/img/testimonial/home-2/shape.png" alt="">
-                                    </div>
-                                    <p>“I had a show and I needed experienced artists to partner with, CrowdPlay was the perfect place that I got an experienced artist to join me in my show.</p>
-                                    <h3 class="tp-testimonial-title">Nicholas Ewung</h3>
-                                    <span>Client</span>
-                                 </div>
-                              </div>
-                              <div class="splide__slide">
-                                 <div class="tp-testimonial-2-wrapper">
-                                    <div class="tp-testimonial-2-shape">
-                                       <img src="assets/img/testimonial/home-2/shape.png" alt="">
-                                    </div>
-                                    <p>“I became a professional photographer after joining CrowdPlay, I utilized Crowdplay's community of artist to grow and hone my photography skills.</p>
-                                    <h3 class="tp-testimonial-title">Nadine Hansen</h3>
-                                    <span>Artist</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s"
-                  data-wow-delay=".3s">
-                     <div class="tp-testimonial-3-from p-relative" data-background="assets/img/brand/home-2/form-img.jpg" style="background-image: url(&quot;assets/img/brand/home-2/form-img.jpg&quot;);">
-                        <div class="tp-brands-from-overlay"></div>
-                        <span class="tp-section__title-pre">Book a Session</span>
-                        <h3 class="tp-brands-title">Book a Session</h3>
-                        <div class="tp-brands-from-input">
-                           <input type="text" placeholder="Full Name:">
-                        </div>
-                        <div class="tp-brands-from-input">
-                           <input type="email" placeholder="Email Address:">
-                        </div>
-                        <div class="tp-brands-from-input">
-                           <input type="text" placeholder="Enter type of service needed:">
-                        </div>
-                        <!-- <div class="tp-brands-from-input">
-                           <select class="wide" style="display: none;">
-                              <option>Choose Service:</option>
-                              <option value="Cleaning Service">Cleaning Service</option>
-                              <option value="Iron Service">Iron Service</option>
-                              <option value="Carpet Service">Carpet Service</option>
-                           </select><div class="nice-select wide" tabindex="0"><span class="current">Choose Service:</span><ul class="list"><li data-value="Choose Service:" class="option selected">Choose Service:</li><li data-value="Cleaning Service" class="option">Cleaning Service</li><li data-value="Iron Service" class="option">Iron Service</li><li data-value="Carpet Service" class="option">Carpet Service</li></ul></div>
-                        </div> -->
-                       <div class="tp-brands-from-input">
-                        <textarea name="message" placeholder="Write Message..."></textarea>
-                       </div>
-                       <button class="tp-btn">Submit Now <i class="fa-regular fa-arrow-right-long"></i></button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      <!-- testimonial area end -->
-
-      </main>
+        </div>
+        </section>
+    </main>
 
 
 
@@ -580,7 +207,7 @@
                         <div class="col-md-4 col-lg-6">
                            <div class="tp-footer-logo">
                               <a href="{{'/'}}">
-                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                                 <img style="width:60px" src="{{asset('assets/img/logo/logo.png')}}" alt="crowdplay logo">
                               </a>
                            </div>
                         </div>

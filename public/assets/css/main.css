@@ -26,7 +26,7 @@
 		2.3 Buttons
 		2.4 Animations
 		2.5 Preloader
-		2.6 Background 
+		2.6 Background
 		2.7 Carousel
 		2.8 Nice Select
 		2.9 Pagination
@@ -161,7 +161,7 @@ li,
   }
 }
 /*---------------------------------
-	typography css start 
+	typography css start
 ---------------------------------*/
 body {
   font-family: var(--tp-ff-body);
@@ -633,7 +633,7 @@ div.demo img {
 }
 
 /*----------------------------------------
-    Body Overlay 
+    Body Overlay
 -----------------------------------------*/
 .body-overlay {
   background-color: var(--tp-common-black);
@@ -14049,3 +14049,20 @@ p.checkout-coupon input[type=text]:focus {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.blog-col{
+    display: flex;
+}
+.tp-blog-wrapper
+{
+    padding: 0;
+
+}
+.tp-blog-content{
+    height: 100%;
+    padding: 15px;
+}
+.tp-blog-breadcrumb-inner-content{
+    height: 40%;
+    padding: 15px;
+}

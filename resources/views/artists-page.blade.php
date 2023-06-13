@@ -27,26 +27,6 @@
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -58,7 +38,7 @@
       <!-- back to top end -->
 
       <!-- header area start -->
-        <header class="tp-header-area p-relative tp-header-height">
+         <header class="tp-header-area p-relative tp-header-height">
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -83,13 +63,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -116,15 +96,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -160,7 +133,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -184,7 +157,6 @@
          </div>
          <div class="offcanvas-overlay"></div>
          </div>
-      <!-- mobile menu style end -->
       <!-- mobile menu style end -->
 
              <main>
@@ -224,9 +196,9 @@
                     @if ($artist->verified !== false)
                      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
                         <div class="tp-team-2-thumb mb-30">
-                           <a href="team-details.html"><img src="{{asset('storage/'.$artist->image)}}" alt=""></a>
+                           <a href="{{ route('artist-details', ['id' => $artist->id]) }}"><img src="{{asset('storage/'.$artist->image)}}" alt=""></a>
                            <div class="tp-team-2-inner text-center">
-                              <h4 class="tp-team-title"><a href="{{'/artist-details'}}">{{ $artist->firstname }} {{ $artist->lastname }}</a></h4>
+                              <h4 class="tp-team-title"><a href="{{ route('artist-details', ['id' => $artist->id]) }}">{{ $artist->firstname }} {{ $artist->lastname }}</a></h4>
                               <span>{{ $artist->artprofession }}</span><br/>
                               <button class=" btn btn-sm btn-primary">
                                  <a href="{{'/contact'}}" target="_blank">Book Now</a>
@@ -291,7 +263,7 @@
                               <span class="mb-30 ">Quick Links</span>
                               <ul class="tp-footer-list-float">
                                  <li><a href="{{'/'}}">Home</a></li>
-                                 <!-- <li><a href="{{'/about'}}">About</a></li> -->
+                                 {{-- <!-- <li><a href="{{'/about'}}">About</a></li> --> --}}
                                  <li><a href="{{'/service'}}">Services</a></li>
                                  <li><a href="{{'/artists'}}">Artists</a></li>
                                  <li><a href="{{'/blog'}}">Blog</a></li>

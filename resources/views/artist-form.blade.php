@@ -1,45 +1,44 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>CrowdPlay Studio </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>CrowdPlay Studio </title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/animate.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/swiper-bundle.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/splide.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/slick.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/nouislider.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/datepicker.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/magnific-popup.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/font-awesome-pro.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/flaticon_kleaso.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/circularProgressBar.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/spacing.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
-</head>
+      <!-- CSS here -->
+      <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/animate.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/swiper-bundle.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/splide.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/slick.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/nouislider.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/datepicker.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/magnific-popup.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/font-awesome-pro.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/flaticon_kleaso.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/circularProgressBar.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/spacing.css') !!}">
+      <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
+   </head>
 
-<body>
+   <body>
+      <!-- back to top start -->
+         <div class="back-to-top-wrapper">
+            <button id="back_to_top" type="button" class="back-to-top-btn">
+               <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+            </button>
+         </div>
+      <!-- back to top end -->
 
-    <!-- back to top start -->
-        <div class="back-to-top-wrapper">
-        <button id="back_to_top" type="button" class="back-to-top-btn">
-            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        </div>
-    <!-- back to top end -->
-
-    <!-- header area start -->
-        <header class="tp-header-area p-relative tp-header-height">
+      <!-- header area start -->
+         <header class="tp-header-area p-relative tp-header-height">
             <div id="header-sticky" class="tp-header-bottom header__sticky p-relative grey-bg-3">
                <div class="tp-header-color"></div>
                <div class="tp-header-space p-relative z-index-1">
@@ -64,13 +63,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -97,15 +96,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -141,7 +133,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -344,7 +336,7 @@
                             <span class="mb-30 ">Quick Links</span>
                             <ul class="tp-footer-list-float">
                                 <li><a href="{{'/'}}">Home</a></li>
-                                <!-- <li><a href="{{'/about'}}">About</a></li> -->
+                                {{-- <!-- <li><a href="{{'/about'}}">About</a></li> --> --}}
                                 <li><a href="{{'/service'}}">Services</a></li>
                                 <li><a href="{{'/artists'}}">Artists</a></li>
                                 <li><a href="{{'/blog'}}">Blog</a></li>

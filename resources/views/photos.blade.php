@@ -1,5 +1,3 @@
-{{-- @extends('layouts.new')
-@section() --}}
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
@@ -11,6 +9,9 @@
 
       <!-- Place favicon.ico in the root directory -->
       <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+
 
       <!-- CSS here -->
       <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.css') !!}">
@@ -26,35 +27,9 @@
       <link rel="stylesheet" href="{!! asset('assets/css/circularProgressBar.css') !!}">
       <link rel="stylesheet" href="{!! asset('assets/css/spacing.css') !!}">
       <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
-">
-<!-- Include Lightbox2 CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-
-
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -79,7 +54,7 @@
                         <div class="col-6 col-lg-6 col-xl-2">
                            <div class="tp-header-logo tp-header-logo-border">
                               <a href="{{'/'}}">
-                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                                 <img style="width:60px" src="{{asset('assets/img/logo/logo.png')}}" alt="crowdplay logo">
                               </a>
                            </div>
                         </div>
@@ -91,13 +66,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -124,15 +99,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -155,7 +123,7 @@
          <div class="tp-side-info">
             <div class="tp-side-logo">
                <a href="{{'/'}}">
-                  <img style="width:80px" src="assets/img/logo/logo.png" alt="logo">
+                  <img style="width:80px" src="{{asset('assets/img/logo/logo.png')}}" alt="logo">
                </a>
             </div>
             <div class="tp-side-close">
@@ -168,7 +136,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -194,6 +162,7 @@
          </div>
       <!-- mobile menu style end -->
 
+
             <main>
          <!-- about breadcrumb area start -->
          <section style="height: 150px" class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/breadcrumb-bg-2.jpg">
@@ -210,11 +179,11 @@
                <div class="row justify-content-center">
                   <div class="col-xl-10">
                      <div class="breadcrumb__content text-center">
-                        <h3 class="breadcrumb__title">Gallery</h3>
+                        <h3 class="breadcrumb__title">{{ $album->name }}</h3>
                         <div class="breadcrumb__list breadcrumb__list-translate">
-                           <span><a href="{{'/'}}">Home</a></span>
+                           <span><a href="{{'/gallery'}}">Portfolio</a></span>
                            <span class="dvdr"><i class="fa-sharp fa-regular fa-minus"></i></span>
-                           <span>GALLERY</span>
+                           <span>{{ $album->name }} Portfolio</span>
                         </div>
                      </div>
                   </div>
@@ -226,7 +195,7 @@
        <div class="container">
             <div class="row mt-4">
                 <div class="col-md-12 mt-4">
-                    <h1>{{ $album->name }}</h1>
+                    {{-- <h2>{{ $album->name }}</h2> --}}
                     <p>{{ $album->description }}</p>
                 </div>
             </div>
@@ -234,12 +203,12 @@
                 @foreach($album->photos as $photo)
                 <div class="col-md-3 col-sm-6 mb-4 mt-3">
                     <a href="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" data-lightbox="album" data-title="{{ $photo->title }}">
-                        <img style="width:100%; height:200px; object-fit:cover;" src="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" class="card-img-top" alt="{{ $photo->title }}">
+                        <img style="width:100%; height:400px; object-fit:cover;" src="{{ asset(str_replace('public', 'storage', $photo->photo)) }}" class="card-img-top" alt="{{ $photo->title }}">
                     </a>
-                    <div class="mt-2">
+                    {{-- <div class="mt-2">
                         <h6 class="card-title">{{ $photo->title }}</h6>
                         <p class="card-text">{{ $photo->description }}</p>
-                    </div>
+                    </div> --}}
                 </div>
                 @endforeach
             </div>

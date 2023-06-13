@@ -24,29 +24,12 @@
       <link rel="stylesheet" href="{!! asset('assets/css/circularProgressBar.css') !!}">
       <link rel="stylesheet" href="{!! asset('assets/css/spacing.css') !!}">
       <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
+
+
+
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -83,13 +66,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -116,15 +99,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -160,7 +136,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -188,122 +164,101 @@
 
            <main>
          <!-- about breadcrumb area start -->
-         <section class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/img-5.jpg">
-            <div class="breadcrumb__bg-overlay m-img"></div>
-               <div class="breadcrumb-shape  d-none d-lg-block">
-               <div class="shape-1">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape.png" alt="">
-               </div>
-               <div class="shape-2">
-                  <img src="assets/img/breadcrumb/breadcrumb-shape-2.png" alt="">
-               </div>
+        <!-- service details area start -->
+<section class="tp-blog-breadcrumb-area pt-120 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+    <div class="row">
+        <!-- Loop through the blog posts -->
+        @foreach($posts as $post)
+        <div class="col-md-6 blog-col">
+            <div class="tp-blog-content-wrapper">
+                <div class="tp-blog-breadcrumb-thumb p-relative">
+                    <a href="{{ route('post', $post->slug) }}"><img src="{{ asset(str_replace('public','storage',$post->image)) }}" alt=""></a>
+                    <span class="tp-section__title-pre">{{ $post->created_at->format('d-M-Y') }}</span>
+                </div>
+                <div class="tp-blog-breadcrumb-inner-content">
+                    <h3 style="font-size: 20px" class="tp-blog-title"><a href="{{ route('post', $post->slug) }}">{{ $post->title }}</a></h3>
+                    {{-- <p>{!! Str::limit(strip_tags($post->content), 200) !!}</p> --}}
+                    {{-- <div class="tp-blog-btn">
+                        <a class="tp-btn" href="{{ route('post', $post->slug) }}">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
+                    </div> --}}
+                </div>
             </div>
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-xl-10">
-                     <div class="breadcrumb__content text-center">
-                        <h3 class="breadcrumb__title">blog post</h3>
-                        <div class="breadcrumb__list breadcrumb__list-translate">
-                           <span><a href="{{'/'}}">Home</a></span>
-                           <span class="dvdr"><i class="fa-sharp fa-regular fa-minus"></i></span>
-                           <span>blog</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- about breadcrumb area end -->
+        </div>
+        @endforeach
+    </div>
 
-         <!-- service details area start -->
-            <section class="tp-blog-breadcrumb-area pt-120 pb-80">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-8">
-                        <div class="tp-blog-right-box">
-                           <div class="tp-blog-content-wrapper mb-60">
-                              <div class="tp-blog-breadcrumb-thumb p-relative">
-                                 <a href="{{'/read'}}"><img src="assets/img/blog/blog/img-2.jpg" alt=""></a>
-                                 <span class="tp-section__title-pre">12-March-2022</span>
-                              </div>
-                              <div class="tp-blog-breadcrumb-inner-content">
-                                 <h3 class="tp-blog-title"><a href="blog-details.html">Helping BIPOC employees fight burnout and find community.</a></h3>
-                                 <p>It has survived  only five centuries, but also the leap  electronic remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing.</p>
-                                 <div class="tp-blog-btn">
-                                    <a class="tp-btn" href="blog-details.html">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tp-blog-breadcrumb-pagination mb-40">
-                              <nav class="blog-pagination" aria-label="...">
-                                 <ul class="pagination">
-                                    <li><a class="page-link" href="blog-details.html">1</a></li>
-                                    <li>
-                                       <a class="page-link" href="blog-details.html">2</a>
-                                    </li>
-                                    <li><a class="page-link" href="blog-details.html">3</a></li>
-                                    <li>
-                                       <a class="page-link active" href="blog-details.html"><i class="fa-regular fa-arrow-right"></i></a>
-                                    </li>
-                                 </ul>
-                              </nav>
-                           </div>
+    <div class="tp-blog-breadcrumb-pagination mb-40">
+        <nav class="blog-pagination" aria-label="...">
+            <ul class="pagination">
+                <!-- Pagination links go here -->
+            </ul>
+        </nav>
+    </div>
+</div>
+
+            <div class="col-lg-4">
+                <div class="tp-blog-left-box">
+                    <div class="tp-service-details__search-box mb-60">
+                        <h3 class="tp-blog-sidebar__widget-title">Search Here</h3>
+                        <div class="search-form p-relative">
+                            <form action="#">
+                                <input type="text" placeholder="Search here">
+                                <button><i class="fa-regular fa-arrow-right-long"></i></button>
+                            </form>
                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="tp-blog-left-box">
-                           <div class="tp-service-details__search-box mb-60">
-                              <h3 class="tp-blog-sidebar__widget-title">Search Here</h3>
-                              <div class="search-form p-relative">
-                                 <form action="#">
-                                    <input type="text" placeholder="Search here">
-                                    <button><i class="fa-regular fa-arrow-right-long"></i></button>
-                                 </form>
-                              </div>
-                           </div>
-                           <div class="service-sidebar__widget mb-60">
-                              <h3 class="service-sidebar__widget-title">Post Categories</h3>
-                              <div class="service-sidebar__widget-content">
-                                 <ul>
-                                    <li><a href="blog-details.html"><i class="fa-regular fa-arrow-right"></i> Kitchen Cleaning<span></span></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div class="tp-blog-sidebar__widget mb-60">
-                              <h3 class="tp-blog-sidebar__widget-title">Recent Post</h3>
-                              <div class="tp-blog-sidebar__widget-content">
-                                 <div class="tp-blog-sidebar__post">
-                                    <div class="rc__post ">
-                                       <div class="rc__post d-flex align-items-center">
-                                          <div class="rc__post-thumb">
-                                             <a href="blog-details.html"><img src="assets/img/blog/blog/img.jpg" alt=""></a>
-                                          </div>
-                                          <div class="rc__post-content">
-                                             <h3 class="rc__post-title">
-                                                <a href="blog-details.html">Social Media Postings <br> Lead to</a>
-                                             </h3>
-                                             <span><i class="fa-light fa-calendar-days"></i> 07-08-2022</span>
-                                          </div>
-                                       </div>
+                    </div>
+                    <div class="service-sidebar__widget mb-60">
+                        <h3 class="service-sidebar__widget-title">Post Categories</h3>
+                        <div class="service-sidebar__widget-content">
+                            <ul>
+                                <!-- Loop through the post categories -->
+                                @foreach($categories as $category)
+                                <li><a href="{{route('category', $category->name)}}"><i class="fa-regular fa-arrow-right"></i> {{ $category->name }}<span></span></a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tp-blog-sidebar__widget mb-60">
+                        <h3 class="tp-blog-sidebar__widget-title">Recent Post</h3>
+                        <div class="tp-blog-sidebar__widget-content">
+                            <!-- Loop through the recent posts -->
+                            @foreach($recents as $recent)
+                            <div class="tp-blog-sidebar__post">
+                                <div class="rc__post d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                        <a href="{{ route('post', $recent->slug)}}"><img src="{{ asset(str_replace('public','storage',$post->image)) }}" alt="{{ $recent->title }}" style="width: 75px;"></a>
                                     </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tp-blog-sidebar__widget mb-30">
-                              <h3 class="tp-blog-sidebar__widget-title">Popular Tag</h3>
-                              <div class="tp-blog-sidbar__widget-content">
-                                 <div class="side__tagcloud">
-                                    <a href="blog-details.html">Cleaning </a>
-                                 </div>
-                               </div>
-                           </div>
-                     </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
+                                    <div class="rc__post-content">
+                                        <h3 class="rc__post-title">
+                                            <a href="{{ route('post', $recent->slug)}}">{{ $recent->title }}</a>
+                                        </h3>
+                                        <span><i class="fa-light fa-calendar-days"></i> {{ $recent->created_at->format('d-m-Y') }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="tp-blog-sidebar__widget mb-30">
+                        <h3 class="tp-blog-sidebar__widget-title">Popular Tag</h3>
+                        <div class="tp-blog-sidbar__widget-content">
+                            <div class="side__tagcloud">
+                                <!-- Loop through the tags -->
+                                @foreach($tags as $tag)
+                                <a href="{{route('tag', $tag->name)}}">{{ $tag->name }}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
          <!-- service details area end -->
-
       </main>
 
 
@@ -354,7 +309,7 @@
                               <span class="mb-30 ">Quick Links</span>
                               <ul class="tp-footer-list-float">
                                  <li><a href="{{'/'}}">Home</a></li>
-                                 <li><a href="{{'#about'}}">About</a></li>
+                                 {{-- <li><a href="{{'#about'}}">About</a></li> --}}
                                  <li><a href="{{'/service'}}">Services</a></li>
                                  <li><a href="{{'/artists'}}">Artists</a></li>
                                  <li> <a href="{{'/gallery'}}">Portfolio</a> </li>

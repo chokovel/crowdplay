@@ -66,9 +66,11 @@ class ArtistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Artist $artist)
+    public function show($id)
     {
-        //
+        $artist = Artist::findOrFail($id);
+
+        return view('artists.show', ['artist' => $artist]);
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Album;
+use App\Models\Artist;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,23 +23,12 @@ use App\Models\Album;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/service', function () {
     return view('service');
 });
-Route::get('/artists', function () {
-    return view('artists');
-});
-Route::get('/artist-details', function () {
-    return view('artist-details');
-});
 Route::get('/artist-form', function () {
     return view('artist-form');
-});
-Route::get('/blog', function () {
-    return view('blog');
 });
 Route::get('/read', function () {
     return view('read');
@@ -47,13 +37,25 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/gallery', [WelcomeController::class, 'gallery'])->name('gallery.index');
 Route::get('/photos/{album}', [WelcomeController::class, 'photos'])->name('albums.photos');
 
 Route::get('/artists-page', [WelcomeController::class, 'artist'])->name('artist-page');
+Route::get('/artist-details/{id}', [WelcomeController::class, 'artistdetails'])->name('artist-details');
 Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
+
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+Route::get('/blog', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
+Route::get('/show/{post}', [App\Http\Controllers\WelcomeController::class, 'show'])->name('post');
+Route::get('our-events', [App\Http\Controllers\WelcomeController::class, 'events'])->name('our-events');
+Route::get('/event_view/{event}', [App\Http\Controllers\WelcomeController::class, 'event_view'])->name('events');
+
+// Route::get('blog/posts/{post}', [App\Http\Controllers\WelcomeController::class, 'show'])->name('blog.show');
+Route::get('/blog/category/{category}', [App\Http\Controllers\BlogController::class, 'Postcategory'])->name('category');
+Route::get('/blog/tag/{tag}', [App\Http\Controllers\BlogController::class, 'Posttag'])->name('tag');
 
 
 Route::get('/dashboard', function () {

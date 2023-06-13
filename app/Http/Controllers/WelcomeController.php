@@ -17,17 +17,24 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        return view('welcome')
-        ->with('categories', Category::all())
-        ->with('tags', Tag::all())
-        ->with('recents', Post::orderBy('updated_at', 'DESC')->limit(3)->get())
-        ->with('events', Event::orderBy('updated_at', 'DESC')->limit(2)->get());
+        $categories = Category::all();
+        $tags = Tag::all();
+        $recents = Post::orderBy('updated_at', 'DESC')->limit(3)->get();
+        $events = Event::orderBy('updated_at', 'DESC')->limit(2)->get();
+
+        return view('welcome', compact('categories', 'tags', 'recents', 'events'));
     }
 
     public function artist()
     {
         $artists = Artist::all();
         return view('artists-page', compact('artists'));
+    }
+
+    public function artistdetails($id)
+    {
+        $artist = Artist::findOrFail($id);
+        return view('artist-details', compact('artist'));
     }
 
     // AlbumController.php
@@ -54,7 +61,6 @@ class WelcomeController extends Controller
         // }
 
         // the above was commented out because we are using scope from the post model i.e scoping the search
-
 
         return view('blog')
         ->with('categories', Category::all())

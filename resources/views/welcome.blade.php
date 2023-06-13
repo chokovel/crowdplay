@@ -199,7 +199,7 @@
                         <img src="assets/img/brand/img-1.jpg" alt="">
                      </div>
                      <div class="tp-features-item-content">
-                        <h4 class="tp-features-item-title"><a href="service-details.html">Entertainment Artists</a></h4>
+                        <h4 class="tp-features-item-title"><a href="#"></a>Entertainment Artists</h4>
                         <p>We profile a variety of award winning professionals ranging from Musicians, Comedians, Disc Jockeys, MCs, Actors, Models, Photographer, Anchors, Presenters to Dancers. CrowdPlay got you. </p>
                      </div>
                      <!-- <div class="tp-btn-effect">
@@ -214,7 +214,7 @@
                         <img src="assets/img/brand/img-2.jpg" alt="">
                      </div>
                      <div class="tp-features-item-content">
-                        <h4 class="tp-features-item-title"><a href="service-details.html">Recording Studio</a></h4>
+                        <h4 class="tp-features-item-title"><a href="#"></a>Recording Studio</h4>
                         <p>You can create your own music, bring your production up to a professional level, and streamline your workflow for short deadlines; Whatever you need, CrowdPlay will help you reach your full creative potential.</p>
                      </div>
                      <!-- <div class="tp-btn-effect">
@@ -281,29 +281,7 @@
  It offers a unique opportunity for artists to showcase their talents and skills, providing a space for them to express their creativity and get recognized. Whether you're a musician, visual artist, or performer, Crowplay provides a powerful platform to connect with potential fans and clients, build your profile, and take your career to the next level.
  <br>We help potential clients find artists. We provide a seamless means for clients to easily find and connect with professional artists for all kinds of events (weddings, birthdays, corporate and house parties, etc.) at affordable cost.
  <br>CrowdPlay also provides solution to all audio and visual production need with the best producers always on standby.</p>
-                     <!-- <div class="tp-about-inner-wrapper d-flex flex-wrap">
-                        <div class="tp-about-inner d-flex">
-                           <div class="tp-about-inner-thumb">
-                              <i class="flaticon-cpu"></i>
-                           </div>
-                           <div class="tp-about-inner-text">
-                              <h4 class="tp-about-inner-title">Modern Technology</h4>
-                              <p>Standard dummy text ever since <br> the unknown printer took.</p>
-                           </div>
-                        </div>
-                        <div class="tp-about-inner d-flex">
-                           <div class="tp-about-inner-thumb">
-                              <i class="flaticon-medal"></i>
-                           </div>
-                           <div class="tp-about-inner-text">
-                              <h4 class="tp-about-inner-title">Award Winning</h4>
-                              <p>Standard dummy text ever since <br> the unknown printer took.</p>
-                           </div>
-                        </div>
-                     </div> -->
-                        <!-- <div class="tp-about-btn">
-                           <a class="tp-btn" href="service.html">Our Services <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
+
                   </div>
                </div>
             </div>
@@ -342,7 +320,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-pipes"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Audios</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Audios</h4>
                                  <p>EXplore the finest top-quality audio producers</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -357,7 +335,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-house-cleaning"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Visuals</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Visuals</h4>
                                  <p>Explore the best quality studios for your next production.</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -372,7 +350,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-workplace"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Photography</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Photography</h4>
                                  <p>Hire the best photographers for a memorable event.</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -387,7 +365,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-window-cleaning"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Announcements</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Announcements</h4>
                                  <p>Public service announcement and all others.</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -402,7 +380,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-mop"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Broadcasting</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Broadcasting</h4>
                                  <p>Gain visibility with our verified broadcasting services.</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -417,7 +395,7 @@
                                  <!-- <div class="tp-service-thumb">
                                     <i class="flaticon-house"></i>
                                  </div> -->
-                                 <h4 class="tp-service-title"><a href="service-details.html">Interviews</a></h4>
+                                 <h4 class="tp-service-title"><a href="#"></a>Interviews</h4>
                                  <p>Eliminate the hassle, let's connect you to the best interviewers.</p>
                                  <!-- <div class="tp-service-item-btn">
                                     <a href="service-details.html"><i class="fa-regular fa-arrow-up-right"></i></a>
@@ -459,7 +437,7 @@
                      <div class="tp-team-wrapper p-relative wow fadeInLeft" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-team-thumb">
-                           <a href="team-details.html"><img src="assets/img/team/artist-a.jpg" alt=""></a>
+                           <a href="#"><img src="assets/img/team/artist-a.jpg" alt=""></a>
                         </div>
                         <!-- <div class="tp-team-social">
                            <ul class="tp-btn-effect">
@@ -478,7 +456,7 @@
                      <div class="tp-team-wrapper p-relative wow fadeInLeft" data-wow-duration="1s"
                      data-wow-delay=".3s">
                         <div class="tp-team-thumb">
-                           <a href="team-details.html"><img src="assets/img/team/team-2.jpg" alt=""></a>
+                           <a href="#"><img src="assets/img/team/team-2.jpg" alt=""></a>
                         </div>
                         <!-- <div class="tp-team-social">
                            <ul class="tp-btn-effect">
@@ -497,7 +475,7 @@
                      <div class="tp-team-wrapper p-relative wow fadeInRight" data-wow-duration="1s"
                      data-wow-delay=".3s">
                         <div class="tp-team-thumb">
-                           <a href="team-details.html"><img src="assets/img/team/team-3.jpg" alt=""></a>
+                           <a href="#"><img src="assets/img/team/team-3.jpg" alt=""></a>
                         </div>
                         <!-- <div class="tp-team-social">
                            <ul class="tp-btn-effect">
@@ -516,7 +494,7 @@
                      <div class="tp-team-wrapper p-relative wow fadeInRight" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-team-thumb">
-                           <a href="team-details.html"><img src="assets/img/team/team-4.jpg" alt=""></a>
+                           <a href="#"><img src="assets/img/team/team-4.jpg" alt=""></a>
                         </div>
                         <!-- <div class="tp-team-social">
                            <ul class="tp-btn-effect">
@@ -550,7 +528,7 @@
                   </div>
                   <div class="col-lg-4">
                      <div class="tp-portfolio-btn text-lg-end">
-                        <a class="tp-btn" href="project.html">All Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
+                        <a class="tp-btn" href="{{'/gallery'}}">All Portfolio <i class="fa-regular fa-arrow-right-long"></i></a>
                      </div>
                   </div>
                </div>
@@ -568,47 +546,63 @@
                            <div class="splide__list">
                               <div class="splide__slide">
                                  <div class="tp-portfolio-thumb w-img p-relative">
-                                    <a href="portfolio-details.html"><img src="assets/img/portfolio/portfolio-2.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/portfolio-2.jpg" alt=""></a>
                                     <div class="tp-portfolio-info p-relative">
                                        <div class="tp-portfolio-content">
                                           <div class="tp-portfolio-title">
-                                             <h4 class="tp-portfolio-content-title"><a href="project.html">Disc Jockey</a></h4>
+                                             <h4 class="tp-portfolio-content-title"><a href="#">Disc Jockey</a></h4>
                                              <p>CrowdPlay Artist</p>
                                           </div>
-                                          <div class="tp-portfolio-content-btn">
-                                             <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-                                          </div>
+                                          {{-- <div class="tp-portfolio-content-btn">
+                                             <a href="#"><i class="fa-regular fa-arrow-up-right"></i></a>
+                                          </div> --}}
                                        </div>
                                     </div>
                                  </div>
                               </div>
                               <div class="splide__slide">
                                  <div class="tp-portfolio-thumb w-img">
-                                    <a href="portfolio-details.html"><img src="assets/img/portfolio/Frame-1.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/Frame-1.jpg" alt=""></a>
                                     <div class="tp-portfolio-info p-relative">
                                        <div class="tp-portfolio-content">
                                           <div class="tp-portfolio-title">
-                                             <h4 class="tp-portfolio-content-title"><a href="project.html">Family Photo</a></h4>
+                                             <h4 class="tp-portfolio-content-title"><a href="#">Family Photo</a></h4>
                                              <p>CrowdPlay photography</p>
                                           </div>
-                                          <div class="tp-portfolio-content-btn">
+                                          {{-- <div class="tp-portfolio-content-btn">
                                              <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-                                          </div>
+                                          </div> --}}
                                        </div>
                                     </div>
                                  </div>
                               </div>
                               <div class="splide__slide">
                                  <div class="tp-portfolio-thumb w-img">
-                                    <a href="portfolio-details.html"><img src="assets/img/portfolio/Frame-2.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/Frame-2.jpg" alt=""></a>
                                     <div class="tp-portfolio-info p-relative">
                                        <div class="tp-portfolio-content">
                                           <div class="tp-portfolio-title">
-                                             <h4 class="tp-portfolio-content-title"><a href="project.html">Interview Broadcast</a></h4>
+                                             <h4 class="tp-portfolio-content-title"><a href="#">Interview Broadcast</a></h4>
+                                             <p>CrowdPlay Studio</p>
+                                          </div>
+                                          {{-- <div class="tp-portfolio-content-btn">
+                                             <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
+                                          </div> --}}
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="splide__slide">
+                                 <div class="tp-portfolio-thumb w-img">
+                                    <a href="#"><img src="assets/img/portfolio/Frame-3.jpg" alt=""></a>
+                                    <div class="tp-portfolio-info p-relative">
+                                       <div class="tp-portfolio-content">
+                                          <div class="tp-portfolio-title">
+                                             <h4 class="tp-portfolio-content-title"><a href="#">Studio Session</a></h4>
                                              <p>CrowdPlay Studio</p>
                                           </div>
                                           <div class="tp-portfolio-content-btn">
-                                             <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
+                                             <a href="#"><i class="fa-regular fa-arrow-up-right"></i></a>
                                           </div>
                                        </div>
                                     </div>
@@ -616,31 +610,15 @@
                               </div>
                               <div class="splide__slide">
                                  <div class="tp-portfolio-thumb w-img">
-                                    <a href="portfolio-details.html"><img src="assets/img/portfolio/Frame-3.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/Frame-4.jpg" alt=""></a>
                                     <div class="tp-portfolio-info p-relative">
                                        <div class="tp-portfolio-content">
                                           <div class="tp-portfolio-title">
-                                             <h4 class="tp-portfolio-content-title"><a href="project.html">Studio Session</a></h4>
-                                             <p>CrowdPlay Studio</p>
-                                          </div>
-                                          <div class="tp-portfolio-content-btn">
-                                             <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="splide__slide">
-                                 <div class="tp-portfolio-thumb w-img">
-                                    <a href="portfolio-details.html"><img src="assets/img/portfolio/Frame-4.jpg" alt=""></a>
-                                    <div class="tp-portfolio-info p-relative">
-                                       <div class="tp-portfolio-content">
-                                          <div class="tp-portfolio-title">
-                                             <h4 class="tp-portfolio-content-title"><a href="project.html">Family Photo</a></h4>
+                                             <h4 class="tp-portfolio-content-title"><a href="#">Family Photo</a></h4>
                                              <p>CrowdPlay Photography</p>
                                           </div>
                                           <div class="tp-portfolio-content-btn">
-                                             <a href="project.html"><i class="fa-regular fa-arrow-up-right"></i></a>
+                                             <a href="#"><i class="fa-regular fa-arrow-up-right"></i></a>
                                           </div>
                                        </div>
                                     </div>
@@ -807,54 +785,24 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="col-md-6 col-lg-4">
+                 @foreach($recents as $recent)
+                  <div class="col-md-6 col-lg-4 blog-col">
                      <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
                      data-wow-delay=".4s">
                         <div class="tp-blog-thumb">
-                           <a href="blog-details.html"><img src="assets/img/blog/artist-j.jpg" alt=""></a>
-                           <span class="tp-section__title-pre">15-November-2022</span>
+                           <a href="{{ route('post', $recent->slug)}}"><img  src="{{ asset(str_replace('public','storage',$recent->image)) }}" alt=""></a>
+                           <span class="tp-section__title-pre">{{ $recent->created_at->format('d-m-Y') }}</span>
                         </div>
                         <div class="tp-blog-content">
-                           <h3 class="tp-blog-title"><a href="blog-details.html">Predefined Chunk Necessary Generator the Internet.</a></h3>
-                           <p>Standard dummy text ever since the unknown <br> took make a type specimen book.</p>
-                           <div class="tp-blog-btn">
-                              <a class="tp-btn" href="blog-details.html">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
-                           </div>
+                           <h3 class="tp-blog-title"><a href="{{ route('post', $recent->slug)}}">{{ $recent->title }}</a></h3>
+                           <p>{!! Str::limit(strip_tags($recent->content), 50, '...') !!}</p>
+                           {{-- <div class="tp-blog-btn">
+                              <a class="tp-btn" href="{{ route('post', $recent->slug)}}">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
+                           </div> --}}
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6 col-lg-4">
-                     <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".4s">
-                        <div class="tp-blog-thumb">
-                           <a href="blog-details.html"><img src="assets/img/blog/artist-j.jpg" alt=""></a>
-                           <span class="tp-section__title-pre">15-November-2022</span>
-                        </div>
-                        <div class="tp-blog-content">
-                           <h3 class="tp-blog-title"><a href="blog-details.html">Predefined Chunk Necessary Generator the Internet.</a></h3>
-                           <p>Standard dummy text ever since the unknown <br> took make a type specimen book.</p>
-                           <div class="tp-blog-btn">
-                              <a class="tp-btn" href="blog-details.html">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                     <div class="tp-blog-wrapper mb-30 wow fadeInUp" data-wow-duration="1s"
-                     data-wow-delay=".4s">
-                        <div class="tp-blog-thumb">
-                           <a href="blog-details.html"><img src="assets/img/blog/artist-j.jpg" alt=""></a>
-                           <span class="tp-section__title-pre">15-November-2022</span>
-                        </div>
-                        <div class="tp-blog-content">
-                           <h3 class="tp-blog-title"><a href="blog-details.html">Predefined Chunk Necessary Generator the Internet.</a></h3>
-                           <p>Standard dummy text ever since the unknown <br> took make a type specimen book.</p>
-                           <div class="tp-blog-btn">
-                              <a class="tp-btn" href="blog-details.html">Read More <i class="fa-regular fa-arrow-right-long"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  @endforeach
                </div>
             </div>
          </section>

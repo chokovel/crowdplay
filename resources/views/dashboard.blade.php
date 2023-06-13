@@ -53,13 +53,22 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                    Welcome
+                </div>
                 <div class="col-md-8">
-                    @yield('content')
+                       {{ __('Welcome!') }}
+                       {{ __('You are logged in!') }}
                 </div>
             </div>
+             @else
+                        <div class="card-header">Welcome</div>
+
+                        <div class="card-body">
+                        {{ 'You are logged in!' }}
+                        </div>
         </div>
-    @else
-                    @yield('content')
+
     @endauth
 </main>
 </x-app-layout>

@@ -27,26 +27,6 @@
    </head>
 
    <body>
-      <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-
-      <!-- pre loader area start -->
-         <!-- <div id="loading">
-            <div id="loading-center">
-               <div id="loading-center-absolute">
-                  <div class="tp-loading-content text-center">
-                     <div class="loading-infinity">
-                        <div><span></span></div>
-                        <div> <span></span></div>
-                        <div> <span></span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
-      <!-- pre loader area end -->
-
       <!-- back to top start -->
          <div class="back-to-top-wrapper">
             <button id="back_to_top" type="button" class="back-to-top-btn">
@@ -83,13 +63,13 @@
                                        <li>
                                           <a href="{{'/'}}">Home</a>
                                        </li>
-                                       <!-- <li> <a href="{{'/'}}">About</a> </li> -->
+                                       {{-- <li> <a href="{{'#about'}}">About</a> </li> --}}
                                        <li> <a href="{{'/service'}}">Services</a> </li>
-                                       <li> <a href="{{'/artists'}}">Artists</a> </li>
+                                       <li> <a href="{{'/artists-page'}}">Artists</a> </li>
                                        <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
                                        <li> <a href="{{'/blog'}}">Blog</a> </li>
                                        <li> <a href="{{'/contact'}}">Contact</a></li>
-                                         {{-- @if (Route::has('login'))
+                                           {{-- @if (Route::has('login'))
                                        <!-- <li class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> -->
                                           @auth
                                           <li>
@@ -116,15 +96,8 @@
                         </div>
                         <div class="col-6 col-lg-6 col-xl-3">
                            <div class="tp-header-right d-flex align-items-center justify-content-xxl-end">
-                              <!-- <div class="tp-header-market mr-50 p-relative d-none d-xxl-block">
-                                 <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span>
-                                       02
-                                    </span>
-                                 </a>
-                                 </div> -->
                                  <div class="tp-header-btn p-relative d-none d-xl-block">
-                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i> Book A Session</a>
+                                    <a class="tp-btn" href="{{'/contact'}}"><i class="fa-light fa-calendar-days"></i>Contact Us</a>
                                  </div>
                                  <div class="mobile-menu d-block d-xl-none text-end">
                                     <button class="tp-side-action tp-toogle hamburger-btn">
@@ -160,7 +133,7 @@
                   <ul>
                      <li class="d-flex align-items-center">
                         <div class="tp-sidebar__contact-text">
-                           <a target="_blank" href="#"><i class="fal fa-map-marker-alt"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja.</a>
+                           <a target="_blank" href="#"></i> CrowdPlay Studios, Kemdy Plaza,By phase3 Gate,Army Post Service Housing Estate, Kurudu, Abuja</a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -232,15 +205,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-1.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-house-cleaning"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service.detail.html">Audios</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Audios</a></h4>
                         <p>EXplore the finest top-quality audio producers in Nigeria.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -253,15 +220,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-2.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-workplace"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Visuals</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Visuals</a></h4>
                         <p>Crowdplay has the best recording studio for your next production.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -274,15 +235,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-3.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-window-cleaning"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Photography</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Photography</a></h4>
                         <p>Hire the best photographers for a memorable event.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -295,16 +250,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-4.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-mop"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Announcements</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Announcements</a></h4>
                         <p>Public service announcement and all others.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
-                       </div>
                      </div>
                   </div>
                   <div class="col-xl-3 col-lg-4 col-md-6">
@@ -316,15 +264,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-5.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-house-cleaning"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service.detail.html">Broadcasting</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Broadcasting</a></h4>
                         <p>Gain visibility with our verified broadcasting services.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -339,11 +281,8 @@
                         </div>
                         <!-- -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Interviews</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Interviews</a></h4>
                         <p>Eliminate the hassle, let's connect you with the best interviewers.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -356,15 +295,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-7.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-window-cleaning"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Presenters</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Presenters</a></h4>
                         <p>Look no further, let's connect you with the top-notch presenters .</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -377,15 +310,9 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-8.jpg" alt="">
                         </div>
-                        <!-- <div class="tp-service-2-icon text-center">
-                           <i class="flaticon-mop"></i>
-                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="service-detail.html">Disc Jockey</a></h4>
+                        <h4 class="tp-service-title"><a href="#">Disc Jockey</a></h4>
                         <p>Connect with award winning Disc Jockeys in no time and with ease.</p>
-                        <!-- <div class="tp-service-2-btn">
-                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
-                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -413,9 +340,6 @@
                      data-wow-delay=".3s">
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-clean"></i>
-                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="25" class="purecounter tp-counter-title">0</h4>
                                  <p>Happy Customers</p>
@@ -424,9 +348,6 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-1 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-cleaning-lady"></i>
-                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="15" class="purecounter tp-counter-title">0</h4>
                                  <p>Team Members</p>
@@ -438,9 +359,6 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-2 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-medal"></i>
-                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="2" class="purecounter tp-counter-title">0</h4>
                                  <p>Award Winning</p>
@@ -452,9 +370,6 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-3 p-relative mb-30">
-                              <!-- <div class="tp-counter-thumb">
-                                 <i class="flaticon-thumbs-up"></i>
-                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1.5" data-purecounter-end="35" class="purecounter tp-counter-title">0</h4>
                                  <p>Projects Complete</p>
@@ -613,7 +528,7 @@
                               <span class="mb-30 ">Quick Links</span>
                               <ul class="tp-footer-list-float">
                                  <li><a href="{{'/'}}">Home</a></li>
-                                 <li><a href="{{'#about'}}">About</a></li>
+                                 {{-- <li><a href="{{'#about'}}">About</a></li> --}}
                                  <li><a href="{{'/service'}}">Services</a></li>
                                  <li><a href="{{'/artists'}}">Artists</a></li>
                                  <li> <a href="{{'/gallery'}}">Portfolio</a> </li>
