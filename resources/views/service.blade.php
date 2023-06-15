@@ -159,7 +159,7 @@
          </div>
       <!-- mobile menu style end -->
 
-            <main>
+          <main>
          <!-- about breadcrumb area start -->
          <section class="breadcrumb__area breadcrumb-style pt-130 pb-115 p-relative z-index-1" data-background="assets/img/breadcrumb/breadcrumb-bg-2.jpg">
             <div class="breadcrumb__bg-overlay m-img"></div>
@@ -205,9 +205,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-1.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-house-cleaning"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Audios</a></h4>
+                        <h4 class="tp-service-title"><a href="service.detail.html">Audios</a></h4>
                         <p>EXplore the finest top-quality audio producers in Nigeria.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -220,9 +226,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-2.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-workplace"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Visuals</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Visuals</a></h4>
                         <p>Crowdplay has the best recording studio for your next production.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -235,9 +247,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-3.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-window-cleaning"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Photography</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Photography</a></h4>
                         <p>Hire the best photographers for a memorable event.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -250,9 +268,16 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-4.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-mop"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Announcements</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Announcements</a></h4>
                         <p>Public service announcement and all others.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
+                       </div>
                      </div>
                   </div>
                   <div class="col-xl-3 col-lg-4 col-md-6">
@@ -264,9 +289,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-5.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-house-cleaning"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Broadcasting</a></h4>
+                        <h4 class="tp-service-title"><a href="service.detail.html">Broadcasting</a></h4>
                         <p>Gain visibility with our verified broadcasting services.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -281,8 +312,11 @@
                         </div>
                         <!-- -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Interviews</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Interviews</a></h4>
                         <p>Eliminate the hassle, let's connect you with the best interviewers.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -295,9 +329,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-7.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-window-cleaning"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Presenters</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Presenters</a></h4>
                         <p>Look no further, let's connect you with the top-notch presenters .</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -310,9 +350,15 @@
                         <div class="tp-service-2-thumb text-center">
                            <img src="assets/img/services/home-2/img-8.jpg" alt="">
                         </div>
+                        <!-- <div class="tp-service-2-icon text-center">
+                           <i class="flaticon-mop"></i>
+                        </div> -->
                        <div class="tp-service-2-inner">
-                        <h4 class="tp-service-title"><a href="#">Disc Jockey</a></h4>
+                        <h4 class="tp-service-title"><a href="service-detail.html">Disc Jockey</a></h4>
                         <p>Connect with award winning Disc Jockeys in no time and with ease.</p>
+                        <!-- <div class="tp-service-2-btn">
+                           <a href="service-details.html">Details <i class="fa-regular fa-arrow-right-long"></i></a>
+                        </div> -->
                        </div>
                      </div>
                   </div>
@@ -340,6 +386,9 @@
                      data-wow-delay=".3s">
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner p-relative mb-30">
+                              <!-- <div class="tp-counter-thumb">
+                                 <i class="flaticon-clean"></i>
+                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="25" class="purecounter tp-counter-title">0</h4>
                                  <p>Happy Customers</p>
@@ -348,6 +397,9 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-1 p-relative mb-30">
+                              <!-- <div class="tp-counter-thumb">
+                                 <i class="flaticon-cleaning-lady"></i>
+                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="15" class="purecounter tp-counter-title">0</h4>
                                  <p>Team Members</p>
@@ -359,6 +411,9 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-2 p-relative mb-30">
+                              <!-- <div class="tp-counter-thumb">
+                                 <i class="flaticon-medal"></i>
+                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1" data-purecounter-end="2" class="purecounter tp-counter-title">0</h4>
                                  <p>Award Winning</p>
@@ -370,6 +425,9 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                            <div class="tp-counter-2-inner-3 p-relative mb-30">
+                              <!-- <div class="tp-counter-thumb">
+                                 <i class="flaticon-thumbs-up"></i>
+                              </div> -->
                               <div class="tp-counter-content">
                                  <h4 data-purecounter-duration="1.5" data-purecounter-end="35" class="purecounter tp-counter-title">0</h4>
                                  <p>Projects Complete</p>
@@ -443,8 +501,21 @@
                         <div class="tp-brands-from-overlay"></div>
                         <span class="tp-section__title-pre">Book a Session</span>
                         <!-- <h3 class="tp-brands-title">Book a Session</h3> -->
+                    <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+
+                        @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                        @endif
                         <div class="tp-brands-from-input">
-                           <input type="text" name="fullname" placeholder="Full Name:" required>
+                           <input type="text" name="name" placeholder="Full Name:" required>
                         </div>
                         <div class="tp-brands-from-input">
                            <input name="phone" type="number" placeholder="Phone:" required>
@@ -470,8 +541,9 @@
                        <div class="tp-brands-from-input">
                         <textarea name="message" placeholder="Write Message..." required></textarea>
                        </div>
-                       <button class="tp-btn">Submit Now <i class="fa-regular fa-arrow-right-long"></i></button>
+                       <button class="tp-btn" type="submit">Submit Now <i class="fa-regular fa-arrow-right-long"></i></button>
                      </div>
+                     </form>
                   </div>
                </div>
             </div>
@@ -479,6 +551,7 @@
       <!-- testimonial area end -->
 
       </main>
+
 
 
 

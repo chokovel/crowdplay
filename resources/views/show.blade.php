@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/logo.png')}}">
 
       <!-- CSS here -->
       <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.css') !!}">
@@ -51,7 +51,7 @@
                         <div class="col-6 col-lg-6 col-xl-2">
                            <div class="tp-header-logo tp-header-logo-border">
                               <a href="{{'/'}}">
-                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                                 <img style="width:60px" src="{{ asset('assets/img/logo/logo.png')}}" alt="crowdplay logo">
                               </a>
                            </div>
                         </div>
@@ -120,7 +120,7 @@
          <div class="tp-side-info">
             <div class="tp-side-logo">
                <a href="{{'/'}}">
-                  <img style="width:80px" src="assets/img/logo/logo.png{{asset('assets/img/logo/logo.png')}}" alt="logo">
+                  <img style="width:80px" src="{{ asset('assets/img/logo/logo.png')}}" alt="logo">
                </a>
             </div>
             <div class="tp-side-close">
@@ -186,6 +186,33 @@
                         </nav>
                     </div>
                 </div>
+                <div class="comments-area pt-5">
+                            <div class="comments-section">
+                                <h4 class="comments-title">Posts Comments</h3>
+
+                                <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://crowdplay-2.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                            </div> <!-- end comments-section -->
+
+                        </div><!-- /.comments-area -->
             </div>
             <div class="col-lg-4">
                 <div class="tp-blog-left-box">
@@ -271,7 +298,7 @@
                         <div class="col-md-4 col-lg-6">
                            <div class="tp-footer-logo">
                               <a href="{{'/'}}">
-                                 <img style="width:60px" src="assets/img/logo/logo.png" alt="crowdplay logo">
+                                 <img style="width:60px" src="{{ asset('assets/img/logo/logo.png')}}" alt="crowdplay logo">
                               </a>
                            </div>
                         </div>

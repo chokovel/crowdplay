@@ -47,6 +47,7 @@ Route::get('/artist-details/{id}', [WelcomeController::class, 'artistdetails'])-
 Route::post('/artist-form', [App\Http\Controllers\ArtistController::class,'artistform'])->name('artists.form');
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::post('/service', [ContactController::class, 'service'])->name('contact.submit');
 
 Route::get('/blog', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
 Route::get('/show/{post}', [App\Http\Controllers\WelcomeController::class, 'show'])->name('post');
